@@ -13,9 +13,12 @@
 		BA79275826BDF85400311E1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA79275626BDF85400311E1E /* Main.storyboard */; };
 		BA79275A26BDF85800311E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA79275926BDF85800311E1E /* Assets.xcassets */; };
 		BA79275D26BDF85800311E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA79275B26BDF85800311E1E /* LaunchScreen.storyboard */; };
+		BA79276626BDFAF600311E1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79276526BDFAF600311E1E /* LoginViewController.swift */; };
+		D3C90A5DD58E15784D4BA17B /* Pods_sampleFireStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0AE6E3743CE7EA1BB79FA8 /* Pods_sampleFireStore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C0AE6E3743CE7EA1BB79FA8 /* Pods_sampleFireStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sampleFireStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA79274D26BDF85400311E1E /* sampleFireStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleFireStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA79275026BDF85400311E1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA79275226BDF85400311E1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,9 @@
 		BA79275926BDF85800311E1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA79275C26BDF85800311E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA79275E26BDF85800311E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA79276526BDFAF600311E1E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E971D50676E5F051CE0B1A06 /* Pods-sampleFireStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleFireStore.debug.xcconfig"; path = "Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore.debug.xcconfig"; sourceTree = "<group>"; };
+		EC5A78C43500DC19C400CABD /* Pods-sampleFireStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleFireStore.release.xcconfig"; path = "Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3C90A5DD58E15784D4BA17B /* Pods_sampleFireStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10EE92FEE7251F61E34B3A21 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E971D50676E5F051CE0B1A06 /* Pods-sampleFireStore.debug.xcconfig */,
+				EC5A78C43500DC19C400CABD /* Pods-sampleFireStore.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		96B991FA37E291F09973979E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C0AE6E3743CE7EA1BB79FA8 /* Pods_sampleFireStore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BA79274426BDF85400311E1E = {
 			isa = PBXGroup;
 			children = (
 				BA79274F26BDF85400311E1E /* sampleFireStore */,
 				BA79274E26BDF85400311E1E /* Products */,
+				10EE92FEE7251F61E34B3A21 /* Pods */,
+				96B991FA37E291F09973979E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +85,22 @@
 			children = (
 				BA79275026BDF85400311E1E /* AppDelegate.swift */,
 				BA79275226BDF85400311E1E /* SceneDelegate.swift */,
-				BA79275426BDF85400311E1E /* ViewController.swift */,
+				BA79276426BDFAC900311E1E /* Controller */,
 				BA79275626BDF85400311E1E /* Main.storyboard */,
 				BA79275926BDF85800311E1E /* Assets.xcassets */,
 				BA79275B26BDF85800311E1E /* LaunchScreen.storyboard */,
 				BA79275E26BDF85800311E1E /* Info.plist */,
 			);
 			path = sampleFireStore;
+			sourceTree = "<group>";
+		};
+		BA79276426BDFAC900311E1E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA79275426BDF85400311E1E /* ViewController.swift */,
+				BA79276526BDFAF600311E1E /* LoginViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA79276126BDF85800311E1E /* Build configuration list for PBXNativeTarget "sampleFireStore" */;
 			buildPhases = (
+				25105C719FB98F9B2DAA4EBA /* [CP] Check Pods Manifest.lock */,
 				BA79274926BDF85400311E1E /* Sources */,
 				BA79274A26BDF85400311E1E /* Frameworks */,
 				BA79274B26BDF85400311E1E /* Resources */,
+				72638E0CC78E48EA9A946662 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,11 +170,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		25105C719FB98F9B2DAA4EBA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-sampleFireStore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72638E0CC78E48EA9A946662 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BA79274926BDF85400311E1E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA79276626BDFAF600311E1E /* LoginViewController.swift in Sources */,
 				BA79275526BDF85400311E1E /* ViewController.swift in Sources */,
 				BA79275126BDF85400311E1E /* AppDelegate.swift in Sources */,
 				BA79275326BDF85400311E1E /* SceneDelegate.swift in Sources */,
@@ -283,6 +364,7 @@
 		};
 		BA79276226BDF85800311E1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E971D50676E5F051CE0B1A06 /* Pods-sampleFireStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +384,7 @@
 		};
 		BA79276326BDF85800311E1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC5A78C43500DC19C400CABD /* Pods-sampleFireStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
