@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA6B77B726CE133C00F2E771 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA6B77B626CE133C00F2E771 /* GoogleService-Info.plist */; };
 		BA79275126BDF85400311E1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79275026BDF85400311E1E /* AppDelegate.swift */; };
 		BA79275326BDF85400311E1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79275226BDF85400311E1E /* SceneDelegate.swift */; };
 		BA79275526BDF85400311E1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79275426BDF85400311E1E /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		6C0AE6E3743CE7EA1BB79FA8 /* Pods_sampleFireStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sampleFireStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA6B77B626CE133C00F2E771 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA79274D26BDF85400311E1E /* sampleFireStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleFireStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA79275026BDF85400311E1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA79275226BDF85400311E1E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +52,6 @@
 				E971D50676E5F051CE0B1A06 /* Pods-sampleFireStore.debug.xcconfig */,
 				EC5A78C43500DC19C400CABD /* Pods-sampleFireStore.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,6 +84,7 @@
 		BA79274F26BDF85400311E1E /* sampleFireStore */ = {
 			isa = PBXGroup;
 			children = (
+				BA6B77B626CE133C00F2E771 /* GoogleService-Info.plist */,
 				BA79275026BDF85400311E1E /* AppDelegate.swift */,
 				BA79275226BDF85400311E1E /* SceneDelegate.swift */,
 				BA79276426BDFAC900311E1E /* Controller */,
@@ -163,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA79275D26BDF85800311E1E /* LaunchScreen.storyboard in Resources */,
+				BA6B77B726CE133C00F2E771 /* GoogleService-Info.plist in Resources */,
 				BA79275A26BDF85800311E1E /* Assets.xcassets in Resources */,
 				BA79275826BDF85400311E1E /* Main.storyboard in Resources */,
 			);
