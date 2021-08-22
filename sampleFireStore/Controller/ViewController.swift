@@ -6,16 +6,99 @@
 //
 
 import UIKit
+import Firebase
+import EMAlertController
 
-class ViewController: UIViewController {
-
-    @IBOutlet weak var topStackView: UIStackView!
-    @IBOutlet weak var bottomStackView: UIStackView!
+final class ViewController: UIViewController {
+    private let db1 = Firestore.firestore().collection("Odai").document("AOoJ18TmBOrB6xlzS3ma")
+    private let db2 = Firestore.firestore()
+    var userName = String()
+    var idString = String()
+    @IBOutlet private weak var odaiLabel: UILabel!
+    @IBOutlet private weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        if UserDefaults.standard.object(forKey: "userName") != nil {
+            
+            userName = UserDefaults.standard.object(forKey: "userName") as! String
+            
+        }
     }
-
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if UserDefaults.standard.object(forKey: "documentID") != nil{
+            
+            idString = UserDefaults.standard.object(forKey: "documentID") as! String
+            
+        }else{
+            
+            idString = db2.collection("Answers").document().path
+            print(idString)
+            idString = String(idString.dropFirst(8))
+            UserDefaults.standard.setValue(idString, forKey: "documentID")
+            
+        }
+        
+        navigationController?.isNavigationBarHidden = true
+        loadQuestionData()
+    }
+    
+    private func loadQuestionData() {
+        db1.getDocument { snapShot, error in
+            if error != nil {
+                return
+            }
+            
+            let data = snapShot?.data()
+            self.odaiLabel.text = data?["odaiText"] as? String
+        }
+    }
+    
+    @IBAction private func send(_ sender: Any) {
+        db2.collection("Answers").document(idString).setData(
+            [
+                "answer": textView.text as Any,
+                "userName": userName as Any,
+                "postDate": Date().timeIntervalSince1970,
+                "like": 0,
+                "likeFlagDic": [idString: false]
+            ]
+        )
+        
+        let alert = EMAlertController(icon: UIImage(named: "check"),
+                                      title: "投稿完了！",
+                                      message: "みんなの回答を見てみよう！")
+        let doneAction = EMAlertAction(title: "OK",
+                                       style: .normal)
+        alert.addAction(doneAction)
+        present(alert, animated: true, completion: nil)
+        textView.text = ""
+    }
+    
+    @IBAction func checkAnswer(_ sender: Any) {
+        let checkViewController = storyboard?.instantiateViewController(identifier: "check") as! CheckViewController
+        checkViewController.odaiString = odaiLabel.text!
+        navigationController?.pushViewController(checkViewController, animated: true)
+    }
+    
+    @IBAction func logout(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            
+            try firebaseAuth.signOut()
+            UserDefaults.standard.removeObject(forKey: "userName")
+            UserDefaults.standard.removeObject(forKey: "documentID")
+            let loginViewController = storyboard?.instantiateViewController(identifier: "login") as! LoginViewController
+            loginViewController.modalTransitionStyle = .coverVertical
+            loginViewController.modalPresentationStyle = .overFullScreen
+            navigationController?.pushViewController(loginViewController, animated: true)
+        } catch let error as NSError {
+            debugPrint("サインアウトエラー", error)
+        }
+    }
 }
 

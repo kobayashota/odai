@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA69D0C626D21C8200696563 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69D0C426D21C8200696563 /* CustomCell.swift */; };
+		BA69D0C726D21C8200696563 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA69D0C526D21C8200696563 /* CustomCell.xib */; };
 		BA6B77B726CE133C00F2E771 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA6B77B626CE133C00F2E771 /* GoogleService-Info.plist */; };
 		BA79275126BDF85400311E1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79275026BDF85400311E1E /* AppDelegate.swift */; };
 		BA79275326BDF85400311E1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79275226BDF85400311E1E /* SceneDelegate.swift */; };
@@ -15,11 +17,18 @@
 		BA79275A26BDF85800311E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA79275926BDF85800311E1E /* Assets.xcassets */; };
 		BA79275D26BDF85800311E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA79275B26BDF85800311E1E /* LaunchScreen.storyboard */; };
 		BA79276626BDFAF600311E1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79276526BDFAF600311E1E /* LoginViewController.swift */; };
+		BAFBC11826CFB197005C0F35 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFBC11726CFB197005C0F35 /* CheckViewController.swift */; };
+		BAFBC11B26CFB39D005C0F35 /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFBC11A26CFB39D005C0F35 /* AnswerModel.swift */; };
+		BAFBC11D26CFB617005C0F35 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFBC11C26CFB617005C0F35 /* DBModel.swift */; };
+		BAFBC11F26D0F2DE005C0F35 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFBC11E26D0F2DE005C0F35 /* CommentViewController.swift */; };
+		BAFBC12126D0F598005C0F35 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFBC12026D0F598005C0F35 /* CommentModel.swift */; };
 		D3C90A5DD58E15784D4BA17B /* Pods_sampleFireStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0AE6E3743CE7EA1BB79FA8 /* Pods_sampleFireStore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6C0AE6E3743CE7EA1BB79FA8 /* Pods_sampleFireStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sampleFireStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA69D0C426D21C8200696563 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		BA69D0C526D21C8200696563 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		BA6B77B626CE133C00F2E771 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA79274D26BDF85400311E1E /* sampleFireStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleFireStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA79275026BDF85400311E1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +39,11 @@
 		BA79275C26BDF85800311E1E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA79275E26BDF85800311E1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA79276526BDFAF600311E1E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BAFBC11726CFB197005C0F35 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
+		BAFBC11A26CFB39D005C0F35 /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
+		BAFBC11C26CFB617005C0F35 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
+		BAFBC11E26D0F2DE005C0F35 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		BAFBC12026D0F598005C0F35 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		E971D50676E5F051CE0B1A06 /* Pods-sampleFireStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleFireStore.debug.xcconfig"; path = "Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore.debug.xcconfig"; sourceTree = "<group>"; };
 		EC5A78C43500DC19C400CABD /* Pods-sampleFireStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleFireStore.release.xcconfig"; path = "Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,11 +101,14 @@
 				BA6B77B626CE133C00F2E771 /* GoogleService-Info.plist */,
 				BA79275026BDF85400311E1E /* AppDelegate.swift */,
 				BA79275226BDF85400311E1E /* SceneDelegate.swift */,
+				BAFBC11926CFB38D005C0F35 /* Model */,
 				BA79276426BDFAC900311E1E /* Controller */,
 				BA79275626BDF85400311E1E /* Main.storyboard */,
 				BA79275926BDF85800311E1E /* Assets.xcassets */,
 				BA79275B26BDF85800311E1E /* LaunchScreen.storyboard */,
 				BA79275E26BDF85800311E1E /* Info.plist */,
+				BA69D0C426D21C8200696563 /* CustomCell.swift */,
+				BA69D0C526D21C8200696563 /* CustomCell.xib */,
 			);
 			path = sampleFireStore;
 			sourceTree = "<group>";
@@ -99,10 +116,22 @@
 		BA79276426BDFAC900311E1E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BA79275426BDF85400311E1E /* ViewController.swift */,
 				BA79276526BDFAF600311E1E /* LoginViewController.swift */,
+				BA79275426BDF85400311E1E /* ViewController.swift */,
+				BAFBC11726CFB197005C0F35 /* CheckViewController.swift */,
+				BAFBC11E26D0F2DE005C0F35 /* CommentViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		BAFBC11926CFB38D005C0F35 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BAFBC11A26CFB39D005C0F35 /* AnswerModel.swift */,
+				BAFBC11C26CFB617005C0F35 /* DBModel.swift */,
+				BAFBC12026D0F598005C0F35 /* CommentModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA69D0C726D21C8200696563 /* CustomCell.xib in Resources */,
 				BA79275D26BDF85800311E1E /* LaunchScreen.storyboard in Resources */,
 				BA6B77B726CE133C00F2E771 /* GoogleService-Info.plist in Resources */,
 				BA79275A26BDF85800311E1E /* Assets.xcassets in Resources */,
@@ -220,9 +250,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAFBC11F26D0F2DE005C0F35 /* CommentViewController.swift in Sources */,
 				BA79276626BDFAF600311E1E /* LoginViewController.swift in Sources */,
+				BA69D0C626D21C8200696563 /* CustomCell.swift in Sources */,
+				BAFBC11D26CFB617005C0F35 /* DBModel.swift in Sources */,
 				BA79275526BDF85400311E1E /* ViewController.swift in Sources */,
 				BA79275126BDF85400311E1E /* AppDelegate.swift in Sources */,
+				BAFBC11B26CFB39D005C0F35 /* AnswerModel.swift in Sources */,
+				BAFBC11826CFB197005C0F35 /* CheckViewController.swift in Sources */,
+				BAFBC12126D0F598005C0F35 /* CommentModel.swift in Sources */,
 				BA79275326BDF85400311E1E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
