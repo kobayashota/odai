@@ -183,24 +183,6 @@
             </objects>
             <point key="canvasLocation" x="1995.6521739130437" y="115.84821428571428"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="pI7-7J-2jN">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gy2-WI-C1i" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mdi-Sd-o3o">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WFJ-RY-FXL"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o6z-Q2-j7Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="114.50892857142857"/>
-        </scene>
         <!--みんなの回答-->
         <scene sceneID="507-JR-2Og">
             <objects>
