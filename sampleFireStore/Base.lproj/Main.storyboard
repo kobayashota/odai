@@ -309,6 +309,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="278" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Q2o-pf-DCG" id="0dR-Sw-ybJ"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3l0-na-o9o">
                                         <rect key="frame" x="294" y="0.0" width="40" height="40"/>

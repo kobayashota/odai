@@ -14,6 +14,7 @@ class CommentViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
     
+    private var activeTextField: UITextField?
     var idString = String()
     var kaitouString = String()
     var userName = String()
@@ -70,21 +71,35 @@ class CommentViewController: UIViewController {
             }
     }
     
-    @objc func keyboardWillShow(_ notification:NSNotification) {
-        let keyboardHeight = ((notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as Any) as AnyObject).cgRectValue.height
-        textField.frame.origin.y = screenSize.height - keyboardHeight - textField.frame.height
-        sendButton.frame.origin.y = screenSize.height - keyboardHeight - sendButton.frame.height
+    @objc
+    func keyboardWillShow(_ notification:NSNotification) {
+        guard let textField = activeTextField else {
+            return
+        }
+        
+        guard let rect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue,
+              let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else {
+                  return
+              }
+        
+        let textFieldFrame = textField.convert(textField.frame, to: self.view)
+        let textFieldLimit = textFieldFrame.origin.y + textField.frame.height + 8.0
+        let keyboardHeight = rect.size.height
+        let keyboardLimit = screenSize.height - keyboardHeight
+        
+        if textFieldLimit >= keyboardLimit {
+            UIView.animate(withDuration: duration) {
+                self.view.transform = CGAffineTransform(translationX: 0, y: -keyboardHeight)
+            }
+        }
     }
     
-    @objc func keyboardWillHide(_ notification:NSNotification) {
-        textField.frame.origin.y = screenSize.height - textField.frame.height
-        sendButton.frame.origin.y = screenSize.height - sendButton.frame.height
-        
+    @objc
+    func keyboardWillHide(_ notification:NSNotification) {
         guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else{return}
         
         UIView.animate(withDuration: duration) {
-            let transform = CGAffineTransform(translationX: 0, y: 0)
-            self.view.transform = transform
+            self.view.transform = .identity
         }
     }
     
@@ -138,5 +153,12 @@ extension CommentViewController: UITableViewDataSource {
         commentLabel.text = "\(dataSets[indexPath.row].userName)さん\n\(dataSets[indexPath.row].comment)"
         
         return cell
+    }
+}
+
+extension CommentViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        activeTextField = textField
+        return true
     }
 }
