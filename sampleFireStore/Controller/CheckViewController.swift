@@ -57,18 +57,16 @@ extension CheckViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        tableView.estimatedRowHeight = 100
-        return UITableView.automaticDimension
+        UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
-        tableView.rowHeight = 200
         
         cell.answerLabel.numberOfLines = 0
         cell.answerLabel.text = "\(dataSets[indexPath.row].userName)さんの回答\n\(dataSets[indexPath.row].answers)"
         cell.likeButton.tag = indexPath.row
-        cell.countLabel.text = String(dataSets[indexPath.row].likeCount) + "いいね"
+        cell.countLabel.text = String(dataSets[indexPath.row].likeCount)
         cell.likeButton.addTarget(self, action: #selector(like(_:)), for: .touchUpInside)
         
         if let likeFlag = dataSets[indexPath.row].likeFlagDic[idString] {
