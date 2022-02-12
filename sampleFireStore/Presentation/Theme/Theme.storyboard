@@ -36,6 +36,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logout:" destination="u4K-iP-lUu" eventType="touchUpInside" id="t17-Im-g03"/>
+                                    <segue destination="lYf-ay-JcN" kind="presentation" identifier="" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="BRV-Uv-xRk"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="bcE-Jg-bD3">
@@ -117,6 +118,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a8I-x1-rz3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2514" y="116"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="ae4-HI-Gsb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="lYf-ay-JcN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="SVt-by-vdQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qTA-sd-slZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2121" y="505"/>
         </scene>
     </scenes>
     <resources>

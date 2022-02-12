@@ -87,10 +87,6 @@ final class ThemeViewController: UIViewController {
             try firebaseAuth.signOut()
             UserDefaults.standard.removeObject(forKey: "userName")
             UserDefaults.standard.removeObject(forKey: "documentID")
-            let loginViewController = storyboard?.instantiateViewController(identifier: "login") as! LoginViewController
-            loginViewController.modalTransitionStyle = .coverVertical
-            loginViewController.modalPresentationStyle = .overFullScreen
-            navigationController?.pushViewController(loginViewController, animated: true)
         } catch let error as NSError {
             debugPrint("サインアウトエラー", error)
         }
