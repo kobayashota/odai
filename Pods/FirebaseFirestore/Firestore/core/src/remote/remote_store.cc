@@ -533,7 +533,7 @@ bool RemoteStore::CanUseNetwork() const {
 }
 
 std::shared_ptr<Transaction> RemoteStore::CreateTransaction() {
-  return std::make_shared<Transaction>(datastore_);
+  return std::make_shared<Transaction>(datastore_.get());
 }
 
 DocumentKeySet RemoteStore::GetRemoteKeysForTarget(TargetId target_id) const {

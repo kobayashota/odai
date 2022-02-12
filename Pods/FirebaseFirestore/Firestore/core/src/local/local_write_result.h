@@ -19,8 +19,6 @@
 
 #include <utility>
 
-#include "Firestore/core/src/immutable/sorted_map.h"
-#include "Firestore/core/src/model/document.h"
 #include "Firestore/core/src/model/model_fwd.h"
 #include "Firestore/core/src/model/types.h"
 

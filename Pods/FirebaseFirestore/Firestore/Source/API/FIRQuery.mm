@@ -60,6 +60,7 @@
 #include "absl/memory/memory.h"
 #include "absl/strings/match.h"
 
+namespace util = firebase::firestore::util;
 namespace nanopb = firebase::firestore::nanopb;
 using firebase::firestore::api::Firestore;
 using firebase::firestore::api::Query;
@@ -509,7 +510,7 @@ int32_t SaturatedLimitValue(NSInteger limit) {
             [[FIRQuerySnapshot alloc] initWithSnapshot:std::move(maybe_snapshot).ValueOrDie()];
         block_(result, nil);
       } else {
-        block_(nil, MakeNSError(maybe_snapshot.status()));
+        block_(nil, util::MakeNSError(maybe_snapshot.status()));
       }
     }
 

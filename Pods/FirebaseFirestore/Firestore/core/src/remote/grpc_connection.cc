@@ -25,7 +25,7 @@
 
 #include "Firestore/core/include/firebase/firestore/firestore_errors.h"
 #include "Firestore/core/include/firebase/firestore/firestore_version.h"
-#include "Firestore/core/src/credentials/auth_token.h"
+#include "Firestore/core/src/auth/token.h"
 #include "Firestore/core/src/model/database_id.h"
 #include "Firestore/core/src/remote/firebase_metadata_provider.h"
 #include "Firestore/core/src/remote/grpc_root_certificate_finder.h"
@@ -48,8 +48,8 @@ namespace firestore {
 namespace remote {
 namespace {
 
+using auth::Token;
 using core::DatabaseInfo;
-using credentials::AuthToken;
 using model::DatabaseId;
 using util::Filesystem;
 using util::Path;
@@ -57,7 +57,6 @@ using util::Status;
 using util::StatusOr;
 using util::StringFormat;
 
-const char* const kAppCheckHeader = "x-firebase-appcheck";
 const char* const kAuthorizationHeader = "authorization";
 const char* const kXGoogApiClientHeader = "x-goog-api-client";
 const char* const kGoogleCloudResourcePrefix = "google-cloud-resource-prefix";
@@ -253,17 +252,14 @@ void GrpcConnection::Shutdown() {
 }
 
 std::unique_ptr<grpc::ClientContext> GrpcConnection::CreateContext(
-    const AuthToken& auth_token, const std::string& app_check_token) const {
-  auto context = absl::make_unique<grpc::ClientContext>();
+    const Token& credential) const {
+  absl::string_view token = credential.user().is_authenticated()
+                                ? credential.token()
+                                : absl::string_view{};
 
-  absl::string_view auth = auth_token.user().is_authenticated()
-                               ? auth_token.token()
-                               : absl::string_view{};
-  if (auth.data()) {
-    context->AddMetadata(kAuthorizationHeader, absl::StrCat("Bearer ", auth));
-  }
-  if (!app_check_token.empty()) {
-    context->AddMetadata(kAppCheckHeader, app_check_token);
+  auto context = absl::make_unique<grpc::ClientContext>();
+  if (token.data()) {
+    context->AddMetadata(kAuthorizationHeader, absl::StrCat("Bearer ", token));
   }
 
   AddCloudApiHeader(*context);
@@ -327,12 +323,11 @@ std::shared_ptr<grpc::Channel> GrpcConnection::CreateChannel() const {
 
 std::unique_ptr<GrpcStream> GrpcConnection::CreateStream(
     absl::string_view rpc_name,
-    const AuthToken& auth_token,
-    const std::string& app_check_token,
+    const Token& token,
     GrpcStreamObserver* observer) {
   EnsureActiveStub();
 
-  auto context = CreateContext(auth_token, app_check_token);
+  auto context = CreateContext(token);
   auto call =
       grpc_stub_->PrepareCall(context.get(), MakeString(rpc_name), grpc_queue_);
   return absl::make_unique<GrpcStream>(std::move(context), std::move(call),
@@ -341,12 +336,11 @@ std::unique_ptr<GrpcStream> GrpcConnection::CreateStream(
 
 std::unique_ptr<GrpcUnaryCall> GrpcConnection::CreateUnaryCall(
     absl::string_view rpc_name,
-    const AuthToken& auth_token,
-    const std::string& app_check_token,
+    const Token& token,
     const grpc::ByteBuffer& message) {
   EnsureActiveStub();
 
-  auto context = CreateContext(auth_token, app_check_token);
+  auto context = CreateContext(token);
   auto call = grpc_stub_->PrepareUnaryCall(context.get(), MakeString(rpc_name),
                                            message, grpc_queue_);
   return absl::make_unique<GrpcUnaryCall>(std::move(context), std::move(call),
@@ -355,12 +349,11 @@ std::unique_ptr<GrpcUnaryCall> GrpcConnection::CreateUnaryCall(
 
 std::unique_ptr<GrpcStreamingReader> GrpcConnection::CreateStreamingReader(
     absl::string_view rpc_name,
-    const AuthToken& auth_token,
-    const std::string& app_check_token,
+    const Token& token,
     const grpc::ByteBuffer& message) {
   EnsureActiveStub();
 
-  auto context = CreateContext(auth_token, app_check_token);
+  auto context = CreateContext(token);
   auto call =
       grpc_stub_->PrepareCall(context.get(), MakeString(rpc_name), grpc_queue_);
   return absl::make_unique<GrpcStreamingReader>(

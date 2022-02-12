@@ -375,7 +375,6 @@ void RewriteTargetsCanonicalIds(leveldb::DB* db,
     transaction.Put(new_key, empty_buffer);
   }
 
-  SaveVersion(7, &transaction);
   transaction.Commit();
 }
 
