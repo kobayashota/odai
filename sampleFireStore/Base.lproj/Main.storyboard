@@ -261,17 +261,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="myy-MS-MCd">
-                                <rect key="frame" x="0.0" y="88" width="414" height="694"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="674"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xC-Ko-zYJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="10"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iXp-GT-IhO">
-                                        <rect key="frame" x="0.0" y="31" width="414" height="663"/>
+                                        <rect key="frame" x="0.0" y="11" width="414" height="663"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="74" id="9eA-yI-xVK">
@@ -303,10 +303,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SXG-vN-CSP">
-                                <rect key="frame" x="40" y="822" width="334" height="40"/>
+                                <rect key="frame" x="20" y="802" width="374" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="06Z-gd-5wY">
-                                        <rect key="frame" x="0.0" y="0.0" width="278" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="318" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -314,7 +314,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3l0-na-o9o">
-                                        <rect key="frame" x="294" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="334" y="0.0" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="KB7-ew-wKc"/>
                                         </constraints>
@@ -332,11 +332,11 @@
                         <viewLayoutGuide key="safeArea" id="Dsl-B1-qQJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Dsl-B1-qQJ" firstAttribute="bottom" secondItem="SXG-vN-CSP" secondAttribute="bottom" id="3R0-Pw-HHX"/>
-                            <constraint firstItem="Dsl-B1-qQJ" firstAttribute="trailing" secondItem="SXG-vN-CSP" secondAttribute="trailing" constant="40" id="4a5-m8-7tX"/>
+                            <constraint firstItem="Dsl-B1-qQJ" firstAttribute="bottom" secondItem="SXG-vN-CSP" secondAttribute="bottom" constant="20" id="3R0-Pw-HHX"/>
+                            <constraint firstItem="Dsl-B1-qQJ" firstAttribute="trailing" secondItem="SXG-vN-CSP" secondAttribute="trailing" constant="20" id="4a5-m8-7tX"/>
                             <constraint firstItem="myy-MS-MCd" firstAttribute="top" secondItem="Dsl-B1-qQJ" secondAttribute="top" id="7o4-c0-Er2"/>
                             <constraint firstItem="myy-MS-MCd" firstAttribute="leading" secondItem="Dsl-B1-qQJ" secondAttribute="leading" id="CVG-mP-eOy"/>
-                            <constraint firstItem="SXG-vN-CSP" firstAttribute="leading" secondItem="Dsl-B1-qQJ" secondAttribute="leading" constant="40" id="DXs-KB-keI"/>
+                            <constraint firstItem="SXG-vN-CSP" firstAttribute="leading" secondItem="Dsl-B1-qQJ" secondAttribute="leading" constant="20" id="DXs-KB-keI"/>
                             <constraint firstAttribute="bottom" secondItem="zF9-qD-as2" secondAttribute="bottom" id="Um4-JD-jYC"/>
                             <constraint firstItem="myy-MS-MCd" firstAttribute="trailing" secondItem="Dsl-B1-qQJ" secondAttribute="trailing" id="gTJ-W7-PAJ"/>
                             <constraint firstItem="zF9-qD-as2" firstAttribute="trailing" secondItem="Dsl-B1-qQJ" secondAttribute="trailing" id="ln4-3R-kR6"/>
