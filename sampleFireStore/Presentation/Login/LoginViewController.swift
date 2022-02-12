@@ -47,3 +47,10 @@ final class LoginViewController: UIViewController {
         }
     }
 }
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        login()
+        return textField.resignFirstResponder()
+    }
+}
