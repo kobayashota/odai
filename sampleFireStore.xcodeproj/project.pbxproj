@@ -22,6 +22,7 @@
 		BAFBC11D26CFB617005C0F35 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFBC11C26CFB617005C0F35 /* DBModel.swift */; };
 		BAFBC11F26D0F2DE005C0F35 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFBC11E26D0F2DE005C0F35 /* CommentViewController.swift */; };
 		BAFBC12126D0F598005C0F35 /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFBC12026D0F598005C0F35 /* CommentModel.swift */; };
+		C484BF3627B75EC700248AE4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484BF3527B75EC700248AE4 /* UIViewController+Extension.swift */; };
 		D3C90A5DD58E15784D4BA17B /* Pods_sampleFireStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0AE6E3743CE7EA1BB79FA8 /* Pods_sampleFireStore.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		BAFBC11C26CFB617005C0F35 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		BAFBC11E26D0F2DE005C0F35 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		BAFBC12026D0F598005C0F35 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		C484BF3527B75EC700248AE4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		E971D50676E5F051CE0B1A06 /* Pods-sampleFireStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleFireStore.debug.xcconfig"; path = "Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore.debug.xcconfig"; sourceTree = "<group>"; };
 		EC5A78C43500DC19C400CABD /* Pods-sampleFireStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleFireStore.release.xcconfig"; path = "Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +111,7 @@
 				BA79275E26BDF85800311E1E /* Info.plist */,
 				BA69D0C426D21C8200696563 /* CustomCell.swift */,
 				BA69D0C526D21C8200696563 /* CustomCell.xib */,
+				C484BF3527B75EC700248AE4 /* UIViewController+Extension.swift */,
 			);
 			path = sampleFireStore;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAFBC11F26D0F2DE005C0F35 /* CommentViewController.swift in Sources */,
+				C484BF3627B75EC700248AE4 /* UIViewController+Extension.swift in Sources */,
 				BA79276626BDFAF600311E1E /* LoginViewController.swift in Sources */,
 				BA69D0C626D21C8200696563 /* CustomCell.swift in Sources */,
 				BAFBC11D26CFB617005C0F35 /* DBModel.swift in Sources */,
