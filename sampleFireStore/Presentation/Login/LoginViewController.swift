@@ -8,8 +8,8 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
-    @IBOutlet weak var textField: UITextField!
+final class LoginViewController: UIViewController {
+    @IBOutlet private weak var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +22,11 @@ class LoginViewController: UIViewController {
     }
     
     private func login() {
-        Auth.auth().signInAnonymously { result, error in
+        Auth.auth().signInAnonymously { [weak self] result, error in
             let user = result?.user
             debugPrint(user!)
-            UserDefaults.standard.set(self.textField.text, forKey: "userName")
-            let viewController = self.storyboard?.instantiateViewController(identifier: "view") as! ViewController
-            self.navigationController?.pushViewController(viewController, animated: true)
+            UserDefaults.standard.set(self?.textField.text, forKey: "userName")
+            self?.performSegue(withIdentifier: "Theme", sender: nil)
         }
     }
     

@@ -40,10 +40,15 @@ class CheckViewController: UIViewController {
 
 extension CheckViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let commentViewController = storyboard?.instantiateViewController(identifier: "comment") as! CommentViewController
-        commentViewController.idString = dataSets[indexPath.row].docID
-        commentViewController.kaitouString = "\(dataSets[indexPath.row].userName)さんの回答\n\(dataSets[indexPath.row].answers)"
-        navigationController?.pushViewController(commentViewController, animated: true)
+        let storyboard = UIStoryboard(name: "Comment", bundle: nil)
+
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "comment") as? CommentViewController else {
+            return
+        }
+        
+        vc.idString = dataSets[indexPath.row].docID
+        vc.kaitouString = "\(dataSets[indexPath.row].userName)さんの回答\n\(dataSets[indexPath.row].answers)"
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

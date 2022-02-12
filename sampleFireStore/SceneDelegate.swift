@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
             
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyBoard.instantiateViewController(identifier: "view")
+            let storyBoard = UIStoryboard(name: "Theme", bundle: nil)
+            let viewController = storyBoard.instantiateViewController(identifier: "theme")
             let navigationViewController = UINavigationController(rootViewController: viewController)
             window.rootViewController = navigationViewController
         } else {
@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             window.makeKeyAndVisible()
             
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let storyBoard = UIStoryboard(name: "Login", bundle: nil)
             let viewController = storyBoard.instantiateViewController(identifier: "login")
             let navigationViewController = UINavigationController(rootViewController: viewController)
             window.rootViewController = navigationViewController

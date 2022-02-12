@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="u4K-iP-lUu">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--面白い回答選手権-->
+        <scene sceneID="FSb-8P-0dd">
+            <objects>
+                <viewController storyboardIdentifier="theme" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u4K-iP-lUu" customClass="ThemeViewController" customModule="sampleFireStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="usZ-bE-gKS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="5cF-j3-dNv">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93t-GE-Z60">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw7-2V-mbD">
+                                <rect key="frame" x="40" y="790" width="334" height="40"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="q71-cM-pRM"/>
+                                </constraints>
+                                <state key="normal" title="ログアウト">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="u4K-iP-lUu" eventType="touchUpInside" id="t17-Im-g03"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="bcE-Jg-bD3">
+                                <rect key="frame" x="40" y="84" width="334" height="498"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お題が入ります" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhg-15-hWE">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9WC-k9-H5b">
+                                        <rect key="frame" x="0.0" y="70" width="334" height="428"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="HnX-kQ-dN2">
+                                <rect key="frame" x="40" y="622" width="334" height="128"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVl-qH-hbL">
+                                        <rect key="frame" x="0.0" y="0.0" width="147" height="128"/>
+                                        <state key="normal" image="send"/>
+                                        <connections>
+                                            <action selector="send:" destination="u4K-iP-lUu" eventType="touchUpInside" id="P9F-0g-zM1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wz-nA-Oms">
+                                        <rect key="frame" x="187" y="0.0" width="147" height="128"/>
+                                        <state key="normal" image="box"/>
+                                        <connections>
+                                            <segue destination="BV7-Jr-Y6j" kind="show" identifier="Check" id="16t-ZW-1Km"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xUM-vW-nbe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="93t-GE-Z60" firstAttribute="leading" secondItem="xUM-vW-nbe" secondAttribute="leading" id="2z3-vC-fNx"/>
+                            <constraint firstItem="HnX-kQ-dN2" firstAttribute="leading" secondItem="xUM-vW-nbe" secondAttribute="leading" constant="40" id="4id-p9-Ri7"/>
+                            <constraint firstItem="bcE-Jg-bD3" firstAttribute="leading" secondItem="xUM-vW-nbe" secondAttribute="leading" constant="40" id="Hw8-K5-614"/>
+                            <constraint firstItem="bcE-Jg-bD3" firstAttribute="top" secondItem="xUM-vW-nbe" secondAttribute="top" constant="40" id="RYr-fr-ZMH"/>
+                            <constraint firstItem="HnX-kQ-dN2" firstAttribute="top" secondItem="bcE-Jg-bD3" secondAttribute="bottom" constant="40" id="WYO-dP-bZg"/>
+                            <constraint firstAttribute="bottom" secondItem="93t-GE-Z60" secondAttribute="bottom" id="YfJ-R9-Jvj"/>
+                            <constraint firstItem="xUM-vW-nbe" firstAttribute="trailing" secondItem="sw7-2V-mbD" secondAttribute="trailing" constant="40" id="cyV-Vu-mU8"/>
+                            <constraint firstItem="xUM-vW-nbe" firstAttribute="bottom" secondItem="sw7-2V-mbD" secondAttribute="bottom" constant="32" id="fWt-qa-D6b"/>
+                            <constraint firstItem="93t-GE-Z60" firstAttribute="top" secondItem="xUM-vW-nbe" secondAttribute="top" id="gfq-N6-Edw"/>
+                            <constraint firstItem="93t-GE-Z60" firstAttribute="trailing" secondItem="xUM-vW-nbe" secondAttribute="trailing" id="iK0-T8-bmE"/>
+                            <constraint firstItem="xUM-vW-nbe" firstAttribute="trailing" secondItem="bcE-Jg-bD3" secondAttribute="trailing" constant="40" id="kuA-hX-mpX"/>
+                            <constraint firstItem="sw7-2V-mbD" firstAttribute="top" secondItem="HnX-kQ-dN2" secondAttribute="bottom" constant="40" id="lht-Bo-4gd"/>
+                            <constraint firstItem="xUM-vW-nbe" firstAttribute="trailing" secondItem="HnX-kQ-dN2" secondAttribute="trailing" constant="40" id="miO-0u-6Ob"/>
+                            <constraint firstItem="sw7-2V-mbD" firstAttribute="leading" secondItem="xUM-vW-nbe" secondAttribute="leading" constant="40" id="qiZ-8d-Zh7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="面白い回答選手権" id="C7Q-M3-ELG">
+                        <barButtonItem key="backBarButtonItem" title=" " id="9Wj-xz-Pmt"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="odaiLabel" destination="Xhg-15-hWE" id="Yey-1n-eau"/>
+                        <outlet property="textView" destination="9WC-k9-H5b" id="QS5-KE-liF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G9o-GO-9mT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1995.6521739130437" y="115.84821428571428"/>
+        </scene>
+        <!--Check-->
+        <scene sceneID="yJP-WI-VED">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Check" id="BV7-Jr-Y6j" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DFh-ik-H4V"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a8I-x1-rz3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2514" y="116"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="1920" height="1920"/>
+        <image name="box" width="128" height="124"/>
+        <image name="send" width="126" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

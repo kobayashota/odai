@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import EMAlertController
 
-final class ViewController: UIViewController {
+final class ThemeViewController: UIViewController {
     private let db1 = Firestore.firestore().collection("Odai").document("AOoJ18TmBOrB6xlzS3ma")
     private let db2 = Firestore.firestore()
     var userName = String()
@@ -21,9 +21,7 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         
         if UserDefaults.standard.object(forKey: "userName") != nil {
-            
             userName = UserDefaults.standard.object(forKey: "userName") as! String
-            
         }
     }
     
@@ -31,20 +29,23 @@ final class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
         if UserDefaults.standard.object(forKey: "documentID") != nil{
-            
             idString = UserDefaults.standard.object(forKey: "documentID") as! String
-            
-        }else{
-            
+        } else {
             idString = db2.collection("Answers").document().path
             print(idString)
             idString = String(idString.dropFirst(8))
             UserDefaults.standard.setValue(idString, forKey: "documentID")
-            
         }
         
         navigationController?.isNavigationBarHidden = true
         loadQuestionData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Check" {
+            let next = segue.destination as? CheckViewController
+                next?.odaiString = odaiLabel.text ?? ""
+        }
     }
     
     private func loadQuestionData() {
@@ -77,12 +78,6 @@ final class ViewController: UIViewController {
         alert.addAction(doneAction)
         present(alert, animated: true, completion: nil)
         textView.text = ""
-    }
-    
-    @IBAction func checkAnswer(_ sender: Any) {
-        let checkViewController = storyboard?.instantiateViewController(identifier: "check") as! CheckViewController
-        checkViewController.odaiString = odaiLabel.text!
-        navigationController?.pushViewController(checkViewController, animated: true)
     }
     
     @IBAction func logout(_ sender: Any) {
