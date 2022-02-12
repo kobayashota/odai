@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class CheckViewController: UIViewController {
+final class CheckViewController: UIViewController {
     
     var odaiString = String()
     @IBOutlet private weak var odaiLabel: UILabel!
@@ -24,7 +24,7 @@ class CheckViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+        tableView.register(UINib(nibName: "CheckListTableViewCell", bundle: nil), forCellReuseIdentifier: "CheckListTableViewCell")
         if UserDefaults.standard.object(forKey: "documentID") != nil {
             idString = UserDefaults.standard.object(forKey: "documentID") as! String
         }
@@ -66,7 +66,7 @@ extension CheckViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as! CustomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListTableViewCell", for: indexPath) as! CheckListTableViewCell
         
         cell.answerLabel.numberOfLines = 0
         cell.answerLabel.text = "\(dataSets[indexPath.row].userName)さんの回答\n\(dataSets[indexPath.row].answers)"

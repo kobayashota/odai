@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA69D0C626D21C8200696563 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69D0C426D21C8200696563 /* CustomCell.swift */; };
-		BA69D0C726D21C8200696563 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA69D0C526D21C8200696563 /* CustomCell.xib */; };
+		BA69D0C626D21C8200696563 /* CheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69D0C426D21C8200696563 /* CheckListTableViewCell.swift */; };
+		BA69D0C726D21C8200696563 /* CheckListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA69D0C526D21C8200696563 /* CheckListTableViewCell.xib */; };
 		BA6B77B726CE133C00F2E771 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA6B77B626CE133C00F2E771 /* GoogleService-Info.plist */; };
 		BA79275126BDF85400311E1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79275026BDF85400311E1E /* AppDelegate.swift */; };
 		BA79275326BDF85400311E1E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79275226BDF85400311E1E /* SceneDelegate.swift */; };
@@ -36,8 +36,8 @@
 
 /* Begin PBXFileReference section */
 		6C0AE6E3743CE7EA1BB79FA8 /* Pods_sampleFireStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sampleFireStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA69D0C426D21C8200696563 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		BA69D0C526D21C8200696563 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		BA69D0C426D21C8200696563 /* CheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListTableViewCell.swift; sourceTree = "<group>"; };
+		BA69D0C526D21C8200696563 /* CheckListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckListTableViewCell.xib; sourceTree = "<group>"; };
 		BA6B77B626CE133C00F2E771 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA79274D26BDF85400311E1E /* sampleFireStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleFireStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA79275026BDF85400311E1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,8 +122,6 @@
 				C4D919E627B7F8C5004B2381 /* Presentation */,
 				BA79275626BDF85400311E1E /* Main.storyboard */,
 				BA79275B26BDF85800311E1E /* LaunchScreen.storyboard */,
-				BA69D0C426D21C8200696563 /* CustomCell.swift */,
-				BA69D0C526D21C8200696563 /* CustomCell.xib */,
 				C484BF3527B75EC700248AE4 /* UIViewController+Extension.swift */,
 			);
 			path = sampleFireStore;
@@ -173,6 +171,7 @@
 		C4D919F127B7FB5D004B2381 /* Check */ = {
 			isa = PBXGroup;
 			children = (
+				C4D919FD27B80605004B2381 /* CheckList */,
 				BAFBC11726CFB197005C0F35 /* CheckViewController.swift */,
 				C4D919F227B7FB6F004B2381 /* CheckViewModel.swift */,
 				C4D919F427B7FB76004B2381 /* Check.storyboard */,
@@ -207,6 +206,15 @@
 				BA79275E26BDF85800311E1E /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C4D919FD27B80605004B2381 /* CheckList */ = {
+			isa = PBXGroup;
+			children = (
+				BA69D0C426D21C8200696563 /* CheckListTableViewCell.swift */,
+				BA69D0C526D21C8200696563 /* CheckListTableViewCell.xib */,
+			);
+			path = CheckList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,7 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA69D0C726D21C8200696563 /* CustomCell.xib in Resources */,
+				BA69D0C726D21C8200696563 /* CheckListTableViewCell.xib in Resources */,
 				C4D919F027B7FB1D004B2381 /* Theme.storyboard in Resources */,
 				BA79275D26BDF85800311E1E /* LaunchScreen.storyboard in Resources */,
 				C4D919EB27B7F956004B2381 /* Login.storyboard in Resources */,
@@ -334,7 +342,7 @@
 				BA79276626BDFAF600311E1E /* LoginViewController.swift in Sources */,
 				C4D919F827B7FBE9004B2381 /* CommentViewModel.swift in Sources */,
 				C4D919F327B7FB6F004B2381 /* CheckViewModel.swift in Sources */,
-				BA69D0C626D21C8200696563 /* CustomCell.swift in Sources */,
+				BA69D0C626D21C8200696563 /* CheckListTableViewCell.swift in Sources */,
 				BAFBC11D26CFB617005C0F35 /* DBModel.swift in Sources */,
 				BA79275526BDF85400311E1E /* ThemeViewController.swift in Sources */,
 				BA79275126BDF85400311E1E /* AppDelegate.swift in Sources */,
