@@ -23,28 +23,39 @@ final class LoginViewController: UIViewController {
     
     private func login() {
         Auth.auth().signInAnonymously { [weak self] result, error in
+            if let error = error {
+                self?.showAlert(message: error.localizedDescription)
+                return
+            }
+            
             let user = result?.user
             debugPrint(user!)
-            UserDefaults.standard.set(self?.textField.text, forKey: "userName")
+            
+            guard let username = self?.textField.text else {
+                return
+            }
+            
+            if username.isEmpty {
+                UserDefaults.standard.set("名無し", forKey: "userName")
+            } else {
+                UserDefaults.standard.set(self?.textField.text, forKey: "userName")
+            }
+            
             self?.performSegue(withIdentifier: "Theme", sender: nil)
         }
     }
     
     @IBAction func done(_ sender: Any) {
-        if textField.text != "" {
-            login()
-        } else {
-            let alert = UIAlertController.init(title: "ユーザ名が空です",
-                                               message: "ユーザ名を入力してください",
-                                               preferredStyle: .alert)
-            let confirmAction: UIAlertAction = UIAlertAction(title: "OK",
-                                                             style: UIAlertAction.Style.default,
-                                                             handler: { (action: UIAlertAction!) -> Void in
-                                                                debugPrint("ログインしようとしましたが、入力欄が空でした")
-                                                             })
-            alert.addAction(confirmAction)
-            present(alert, animated: true, completion: nil)
-        }
+        login()
+    }
+    
+    private func showAlert(message: String) {
+        let alert = UIAlertController.init(title: "ログイン失敗", message: message, preferredStyle: .alert)
+        let confirmAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { _ in
+                                                            debugPrint("ログイン失敗")
+                                                         }
+        alert.addAction(confirmAction)
+        present(alert, animated: true, completion: nil)
     }
 }
 
