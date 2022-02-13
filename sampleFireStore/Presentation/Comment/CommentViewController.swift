@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class CommentViewController: UIViewController {
+final class CommentViewController: DismissKeyboardViewContoller {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var kaitouLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
