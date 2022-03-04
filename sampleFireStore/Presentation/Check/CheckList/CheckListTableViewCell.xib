@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9c-Hm-9Mp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="12" y="12" width="390" height="42"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -47,11 +47,11 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="hKh-z4-SDR" firstAttribute="top" secondItem="P9c-Hm-9Mp" secondAttribute="bottom" constant="10" id="IfH-lu-MTh"/>
+                    <constraint firstItem="hKh-z4-SDR" firstAttribute="top" secondItem="P9c-Hm-9Mp" secondAttribute="bottom" constant="12" id="IfH-lu-MTh"/>
                     <constraint firstItem="hKh-z4-SDR" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottom" constant="-10" id="JLr-bl-CDP"/>
-                    <constraint firstAttribute="trailing" secondItem="P9c-Hm-9Mp" secondAttribute="trailing" id="KWT-8m-sl6"/>
-                    <constraint firstItem="P9c-Hm-9Mp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hRw-xj-5W4"/>
-                    <constraint firstItem="P9c-Hm-9Mp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hxY-eZ-2Lc"/>
+                    <constraint firstAttribute="trailing" secondItem="P9c-Hm-9Mp" secondAttribute="trailing" constant="12" id="KWT-8m-sl6"/>
+                    <constraint firstItem="P9c-Hm-9Mp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="hRw-xj-5W4"/>
+                    <constraint firstItem="P9c-Hm-9Mp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="hxY-eZ-2Lc"/>
                     <constraint firstAttribute="trailing" secondItem="hKh-z4-SDR" secondAttribute="trailing" constant="10" id="sX4-2s-ZDZ"/>
                 </constraints>
             </tableViewCellContentView>
