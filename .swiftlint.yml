@@ -1,0 +1,11 @@
+disabled_rules:
+- trailing_whitespace
+- force_cast
+- line_length
+
+excluded:
+- Pods/
+- Carthage/
+
+identifier_name:
+  min_length: 2
