@@ -11,7 +11,7 @@ final class CheckListTableViewCell: UITableViewCell {
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var countLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }

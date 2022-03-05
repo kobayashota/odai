@@ -16,19 +16,19 @@ final class ThemeViewController: UIViewController {
     var idString = String()
     @IBOutlet private weak var odaiLabel: UILabel!
     @IBOutlet private weak var textView: UITextView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if UserDefaults.standard.object(forKey: "userName") != nil {
             userName = UserDefaults.standard.object(forKey: "userName") as! String
         }
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if UserDefaults.standard.object(forKey: "documentID") != nil{
+
+        if UserDefaults.standard.object(forKey: "documentID") != nil {
             idString = UserDefaults.standard.object(forKey: "documentID") as! String
         } else {
             idString = db2.collection("Answers").document().path
@@ -36,29 +36,29 @@ final class ThemeViewController: UIViewController {
             idString = String(idString.dropFirst(8))
             UserDefaults.standard.setValue(idString, forKey: "documentID")
         }
-        
+
         navigationController?.isNavigationBarHidden = true
         loadQuestionData()
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Check" {
             let next = segue.destination as? CheckViewController
-                next?.odaiString = odaiLabel.text ?? ""
+            next?.odaiString = odaiLabel.text ?? ""
         }
     }
-    
+
     private func loadQuestionData() {
         db1.getDocument { snapShot, error in
             if error != nil {
                 return
             }
-            
+
             let data = snapShot?.data()
             self.odaiLabel.text = data?["odaiText"] as? String
         }
     }
-    
+
     @IBAction private func send(_ sender: Any) {
         db2.collection("Answers").document(idString).setData(
             [
@@ -69,7 +69,7 @@ final class ThemeViewController: UIViewController {
                 "likeFlagDic": [idString: false]
             ]
         )
-        
+
         let alert = EMAlertController(icon: UIImage(named: "check"),
                                       title: "投稿完了！",
                                       message: "みんなの回答を見てみよう！")
@@ -79,11 +79,11 @@ final class ThemeViewController: UIViewController {
         present(alert, animated: true, completion: nil)
         textView.text = ""
     }
-    
+
     @IBAction func logout(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {
-            
+
             try firebaseAuth.signOut()
             UserDefaults.standard.removeObject(forKey: "userName")
             UserDefaults.standard.removeObject(forKey: "documentID")
@@ -92,4 +92,3 @@ final class ThemeViewController: UIViewController {
         }
     }
 }
-

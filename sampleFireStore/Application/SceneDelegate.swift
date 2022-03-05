@@ -9,16 +9,14 @@ import UIKit
 import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         if Auth.auth().currentUser?.uid != nil {
             let window = UIWindow(windowScene: scene as! UIWindowScene)
             self.window = window
             window.makeKeyAndVisible()
-            
+
             let storyBoard = UIStoryboard(name: "Theme", bundle: nil)
             let viewController = storyBoard.instantiateViewController(identifier: "theme")
             let navigationViewController = UINavigationController(rootViewController: viewController)
@@ -27,14 +25,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: scene as! UIWindowScene)
             self.window = window
             window.makeKeyAndVisible()
-            
+
             let storyBoard = UIStoryboard(name: "Login", bundle: nil)
             let viewController = storyBoard.instantiateViewController(identifier: "login")
             let navigationViewController = UINavigationController(rootViewController: viewController)
             window.rootViewController = navigationViewController
         }
-        
-        guard let _ = (scene as? UIWindowScene) else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -64,7 +60,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
-

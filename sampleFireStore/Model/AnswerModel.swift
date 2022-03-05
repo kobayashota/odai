@@ -12,5 +12,5 @@ struct AnswerModel {
     let userName: String
     let docID: String
     let likeCount: Int
-    let likeFlagDic: Dictionary<String, Bool>
+    let likeFlagDic: [String: Bool]
 }

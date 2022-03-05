@@ -10,12 +10,12 @@ import UIKit
 class DismissKeyboardViewContoller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let tappedDismissKeyboard = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tappedDismissKeyboard.cancelsTouchesInView = false
         view.addGestureRecognizer(tappedDismissKeyboard)
     }
-    
+
     @objc
     private func dismissKeyboard() {
         view.endEditing(true)
