@@ -22,7 +22,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93t-GE-Z60">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sw7-2V-mbD">
@@ -89,7 +89,7 @@
                             <constraint firstAttribute="bottom" secondItem="93t-GE-Z60" secondAttribute="bottom" id="YfJ-R9-Jvj"/>
                             <constraint firstItem="xUM-vW-nbe" firstAttribute="trailing" secondItem="sw7-2V-mbD" secondAttribute="trailing" constant="40" id="cyV-Vu-mU8"/>
                             <constraint firstItem="xUM-vW-nbe" firstAttribute="bottom" secondItem="sw7-2V-mbD" secondAttribute="bottom" constant="32" id="fWt-qa-D6b"/>
-                            <constraint firstItem="93t-GE-Z60" firstAttribute="top" secondItem="xUM-vW-nbe" secondAttribute="top" id="gfq-N6-Edw"/>
+                            <constraint firstItem="93t-GE-Z60" firstAttribute="top" secondItem="usZ-bE-gKS" secondAttribute="top" id="gfq-N6-Edw"/>
                             <constraint firstItem="93t-GE-Z60" firstAttribute="trailing" secondItem="xUM-vW-nbe" secondAttribute="trailing" id="iK0-T8-bmE"/>
                             <constraint firstItem="xUM-vW-nbe" firstAttribute="trailing" secondItem="bcE-Jg-bD3" secondAttribute="trailing" constant="40" id="kuA-hX-mpX"/>
                             <constraint firstItem="sw7-2V-mbD" firstAttribute="top" secondItem="HnX-kQ-dN2" secondAttribute="bottom" constant="40" id="lht-Bo-4gd"/>
