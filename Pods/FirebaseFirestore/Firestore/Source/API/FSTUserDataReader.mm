@@ -57,7 +57,6 @@
 #include "absl/strings/match.h"
 #include "absl/types/optional.h"
 
-namespace util = firebase::firestore::util;
 namespace nanopb = firebase::firestore::nanopb;
 using firebase::Timestamp;
 using firebase::TimestampInternal;
@@ -69,6 +68,7 @@ using firebase::firestore::core::ParsedUpdateData;
 using firebase::firestore::core::UserDataSource;
 using firebase::firestore::model::ArrayTransform;
 using firebase::firestore::model::DatabaseId;
+using firebase::firestore::model::DeepClone;
 using firebase::firestore::model::DocumentKey;
 using firebase::firestore::model::FieldMask;
 using firebase::firestore::model::FieldPath;
@@ -82,6 +82,7 @@ using firebase::firestore::model::TransformOperation;
 using firebase::firestore::nanopb::CheckedSize;
 using firebase::firestore::nanopb::Message;
 using firebase::firestore::remote::Serializer;
+using firebase::firestore::util::MakeString;
 using firebase::firestore::util::ThrowInvalidArgument;
 using firebase::firestore::util::ReadContext;
 using firebase::firestore::google_firestore_v1_Value;
@@ -175,7 +176,7 @@ NS_ASSUME_NONNULL_BEGIN
       FieldPath path;
 
       if ([fieldPath isKindOfClass:[NSString class]]) {
-        path = FieldPath::FromDotSeparatedString(util::MakeString(fieldPath));
+        path = FieldPath::FromDotSeparatedString(MakeString(fieldPath));
       } else if ([fieldPath isKindOfClass:[FIRFieldPath class]]) {
         path = static_cast<FIRFieldPath *>(fieldPath).internalValue;
       } else {
@@ -217,7 +218,7 @@ NS_ASSUME_NONNULL_BEGIN
     FieldPath path;
 
     if ([key isKindOfClass:[NSString class]]) {
-      path = FieldPath::FromDotSeparatedString(util::MakeString(key));
+      path = FieldPath::FromDotSeparatedString(MakeString(key));
     } else if ([key isKindOfClass:[FIRFieldPath class]]) {
       path = ((FIRFieldPath *)key).internalValue;
     } else {
@@ -305,8 +306,7 @@ NS_ASSUME_NONNULL_BEGIN
                                               context:(ParseContext &&)context {
   __block Message<google_firestore_v1_Value> result;
   result->which_value_type = google_firestore_v1_Value_map_value_tag;
-  result->map_value.fields_count = 0;
-  result->map_value.fields = nil;
+  result->map_value = {};
 
   if (dict.count == 0) {
     const FieldPath *path = context.path();
@@ -328,9 +328,9 @@ NS_ASSUME_NONNULL_BEGIN
 
     __block pb_size_t index = 0;
     [dict enumerateKeysAndObjectsUsingBlock:^(NSString *key, id value, BOOL *) {
-      auto parsedValue = [self parseData:value context:context.ChildContext(util::MakeString(key))];
+      auto parsedValue = [self parseData:value context:context.ChildContext(MakeString(key))];
       if (parsedValue) {
-        result->map_value.fields[index].key = nanopb::MakeBytesArray(util::MakeString(key));
+        result->map_value.fields[index].key = nanopb::MakeBytesArray(MakeString(key));
         result->map_value.fields[index].value = *parsedValue->release();
         ++index;
       }
@@ -352,7 +352,7 @@ NS_ASSUME_NONNULL_BEGIN
     auto parsedEntry = [self parseData:entry context:context.ChildContext(idx)];
     if (!parsedEntry) {
       // Just include nulls in the array for fields being replaced with a sentinel.
-      parsedEntry = NullValue();
+      parsedEntry.emplace(DeepClone(NullValue()));
     }
     result->array_value.values[idx] = *parsedEntry->release();
   }];
@@ -433,7 +433,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (Message<google_firestore_v1_Value>)parseScalarValue:(nullable id)input
                                                context:(ParseContext &&)context {
   if (!input || [input isMemberOfClass:[NSNull class]]) {
-    return NullValue();
+    return DeepClone(NullValue());
 
   } else if ([input isKindOfClass:[NSNumber class]]) {
     // Recover the underlying type of the number, using the method described here:
@@ -500,7 +500,7 @@ NS_ASSUME_NONNULL_BEGIN
     }
 
   } else if ([input isKindOfClass:[NSString class]]) {
-    std::string inputString = util::MakeString(input);
+    std::string inputString = MakeString(input);
     return [self encodeStringValue:inputString];
 
   } else if ([input isKindOfClass:[NSDate class]]) {

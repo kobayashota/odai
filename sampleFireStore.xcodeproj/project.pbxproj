@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,9 @@
 		BA79275A26BDF85800311E1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA79275926BDF85800311E1E /* Assets.xcassets */; };
 		BA79275D26BDF85800311E1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA79275B26BDF85800311E1E /* LaunchScreen.storyboard */; };
 		BA79276626BDFAF600311E1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA79276526BDFAF600311E1E /* LoginViewController.swift */; };
+		BACB84CA287942A1007477D3 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = BACB84C9287942A1007477D3 /* RxCocoa */; };
+		BACB84CC287942A1007477D3 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = BACB84CB287942A1007477D3 /* RxRelay */; };
+		BACB84CE287942A1007477D3 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BACB84CD287942A1007477D3 /* RxSwift */; };
 		BAFBC11826CFB197005C0F35 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFBC11726CFB197005C0F35 /* CheckViewController.swift */; };
 		BAFBC11B26CFB39D005C0F35 /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFBC11A26CFB39D005C0F35 /* AnswerModel.swift */; };
 		BAFBC11D26CFB617005C0F35 /* DBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFBC11C26CFB617005C0F35 /* DBModel.swift */; };
@@ -32,11 +35,10 @@
 		C4D919F527B7FB76004B2381 /* Check.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4D919F427B7FB76004B2381 /* Check.storyboard */; };
 		C4D919F827B7FBE9004B2381 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D919F727B7FBE9004B2381 /* CommentViewModel.swift */; };
 		C4D919FA27B7FBF2004B2381 /* Comment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4D919F927B7FBF2004B2381 /* Comment.storyboard */; };
-		D3C90A5DD58E15784D4BA17B /* Pods_sampleFireStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C0AE6E3743CE7EA1BB79FA8 /* Pods_sampleFireStore.framework */; };
+		D3D46B4E32C28651F7F7315F /* Pods_sampleFireStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8742FDA3F397C0222D5285E /* Pods_sampleFireStore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6C0AE6E3743CE7EA1BB79FA8 /* Pods_sampleFireStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sampleFireStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA69D0C426D21C8200696563 /* CheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListTableViewCell.swift; sourceTree = "<group>"; };
 		BA69D0C526D21C8200696563 /* CheckListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckListTableViewCell.xib; sourceTree = "<group>"; };
 		BA6B77B626CE133C00F2E771 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		BAFBC11C26CFB617005C0F35 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		BAFBC11E26D0F2DE005C0F35 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		BAFBC12026D0F598005C0F35 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
+		C15D6B68B9F968DD59FA732D /* Pods-sampleFireStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleFireStore.release.xcconfig"; path = "Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore.release.xcconfig"; sourceTree = "<group>"; };
 		C408152A27B8A5B00056A25B /* DismissKeyboardViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboardViewContoller.swift; sourceTree = "<group>"; };
 		C484BF3527B75EC700248AE4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C4D919E827B7F92F004B2381 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -64,8 +67,8 @@
 		C4D919F427B7FB76004B2381 /* Check.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Check.storyboard; sourceTree = "<group>"; };
 		C4D919F727B7FBE9004B2381 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		C4D919F927B7FBF2004B2381 /* Comment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Comment.storyboard; sourceTree = "<group>"; };
-		E971D50676E5F051CE0B1A06 /* Pods-sampleFireStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleFireStore.debug.xcconfig"; path = "Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore.debug.xcconfig"; sourceTree = "<group>"; };
-		EC5A78C43500DC19C400CABD /* Pods-sampleFireStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleFireStore.release.xcconfig"; path = "Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore.release.xcconfig"; sourceTree = "<group>"; };
+		E604FBC9FFB28991968FECA9 /* Pods-sampleFireStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleFireStore.debug.xcconfig"; path = "Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore.debug.xcconfig"; sourceTree = "<group>"; };
+		F8742FDA3F397C0222D5285E /* Pods_sampleFireStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sampleFireStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +76,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3C90A5DD58E15784D4BA17B /* Pods_sampleFireStore.framework in Frameworks */,
+				BACB84CC287942A1007477D3 /* RxRelay in Frameworks */,
+				BACB84CA287942A1007477D3 /* RxCocoa in Frameworks */,
+				BACB84CE287942A1007477D3 /* RxSwift in Frameworks */,
+				D3D46B4E32C28651F7F7315F /* Pods_sampleFireStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,16 +89,16 @@
 		10EE92FEE7251F61E34B3A21 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E971D50676E5F051CE0B1A06 /* Pods-sampleFireStore.debug.xcconfig */,
-				EC5A78C43500DC19C400CABD /* Pods-sampleFireStore.release.xcconfig */,
+				E604FBC9FFB28991968FECA9 /* Pods-sampleFireStore.debug.xcconfig */,
+				C15D6B68B9F968DD59FA732D /* Pods-sampleFireStore.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		96B991FA37E291F09973979E /* Frameworks */ = {
+		583407E9B06810F75464D3A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6C0AE6E3743CE7EA1BB79FA8 /* Pods_sampleFireStore.framework */,
+				F8742FDA3F397C0222D5285E /* Pods_sampleFireStore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -103,7 +109,7 @@
 				BA79274F26BDF85400311E1E /* sampleFireStore */,
 				BA79274E26BDF85400311E1E /* Products */,
 				10EE92FEE7251F61E34B3A21 /* Pods */,
-				96B991FA37E291F09973979E /* Frameworks */,
+				583407E9B06810F75464D3A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,18 +241,23 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA79276126BDF85800311E1E /* Build configuration list for PBXNativeTarget "sampleFireStore" */;
 			buildPhases = (
-				25105C719FB98F9B2DAA4EBA /* [CP] Check Pods Manifest.lock */,
+				646B95ADA6DA80B205BC2EC8 /* [CP] Check Pods Manifest.lock */,
 				BA79274926BDF85400311E1E /* Sources */,
 				BA79274A26BDF85400311E1E /* Frameworks */,
 				BA79274B26BDF85400311E1E /* Resources */,
-				72638E0CC78E48EA9A946662 /* [CP] Embed Pods Frameworks */,
 				BA7E8F4427D3759700484B65 /* Run SwiftLint */,
+				A348B7AB8A4EA9FC87617847 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = sampleFireStore;
+			packageProductDependencies = (
+				BACB84C9287942A1007477D3 /* RxCocoa */,
+				BACB84CB287942A1007477D3 /* RxRelay */,
+				BACB84CD287942A1007477D3 /* RxSwift */,
+			);
 			productName = sampleFireStore;
 			productReference = BA79274D26BDF85400311E1E /* sampleFireStore.app */;
 			productType = "com.apple.product-type.application";
@@ -274,6 +285,9 @@
 				Base,
 			);
 			mainGroup = BA79274426BDF85400311E1E;
+			packageReferences = (
+				BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = BA79274E26BDF85400311E1E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -303,7 +317,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		25105C719FB98F9B2DAA4EBA /* [CP] Check Pods Manifest.lock */ = {
+		646B95ADA6DA80B205BC2EC8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -325,7 +339,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		72638E0CC78E48EA9A946662 /* [CP] Embed Pods Frameworks */ = {
+		A348B7AB8A4EA9FC87617847 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -526,7 +540,7 @@
 		};
 		BA79276226BDF85800311E1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E971D50676E5F051CE0B1A06 /* Pods-sampleFireStore.debug.xcconfig */;
+			baseConfigurationReference = E604FBC9FFB28991968FECA9 /* Pods-sampleFireStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -546,7 +560,7 @@
 		};
 		BA79276326BDF85800311E1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC5A78C43500DC19C400CABD /* Pods-sampleFireStore.release.xcconfig */;
+			baseConfigurationReference = C15D6B68B9F968DD59FA732D /* Pods-sampleFireStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -586,6 +600,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BACB84C9287942A1007477D3 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		BACB84CB287942A1007477D3 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		BACB84CD287942A1007477D3 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA79274526BDF85400311E1E /* Project object */;
 }
