@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8394894B397BF7ED30475BF2 /* Pods_odai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F521D248930691F7639B61 /* Pods_odai.framework */; };
 		BA69D0C626D21C8200696563 /* CheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA69D0C426D21C8200696563 /* CheckListTableViewCell.swift */; };
 		BA69D0C726D21C8200696563 /* CheckListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA69D0C526D21C8200696563 /* CheckListTableViewCell.xib */; };
 		BA6B77B726CE133C00F2E771 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA6B77B626CE133C00F2E771 /* GoogleService-Info.plist */; };
@@ -35,10 +36,12 @@
 		C4D919F527B7FB76004B2381 /* Check.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4D919F427B7FB76004B2381 /* Check.storyboard */; };
 		C4D919F827B7FBE9004B2381 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D919F727B7FBE9004B2381 /* CommentViewModel.swift */; };
 		C4D919FA27B7FBF2004B2381 /* Comment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4D919F927B7FBF2004B2381 /* Comment.storyboard */; };
-		D3D46B4E32C28651F7F7315F /* Pods_sampleFireStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8742FDA3F397C0222D5285E /* Pods_sampleFireStore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B7F1295768B6EE912DF77D3 /* Pods-odai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-odai.debug.xcconfig"; path = "Target Support Files/Pods-odai/Pods-odai.debug.xcconfig"; sourceTree = "<group>"; };
+		72F521D248930691F7639B61 /* Pods_odai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_odai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D7CFF209C168CD2D0BB2C75 /* Pods-odai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-odai.release.xcconfig"; path = "Target Support Files/Pods-odai/Pods-odai.release.xcconfig"; sourceTree = "<group>"; };
 		BA69D0C426D21C8200696563 /* CheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListTableViewCell.swift; sourceTree = "<group>"; };
 		BA69D0C526D21C8200696563 /* CheckListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckListTableViewCell.xib; sourceTree = "<group>"; };
 		BA6B77B626CE133C00F2E771 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -68,7 +71,6 @@
 		C4D919F727B7FBE9004B2381 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		C4D919F927B7FBF2004B2381 /* Comment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Comment.storyboard; sourceTree = "<group>"; };
 		E604FBC9FFB28991968FECA9 /* Pods-sampleFireStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleFireStore.debug.xcconfig"; path = "Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore.debug.xcconfig"; sourceTree = "<group>"; };
-		F8742FDA3F397C0222D5285E /* Pods_sampleFireStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sampleFireStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +81,7 @@
 				BACB84CC287942A1007477D3 /* RxRelay in Frameworks */,
 				BACB84CA287942A1007477D3 /* RxCocoa in Frameworks */,
 				BACB84CE287942A1007477D3 /* RxSwift in Frameworks */,
-				D3D46B4E32C28651F7F7315F /* Pods_sampleFireStore.framework in Frameworks */,
+				8394894B397BF7ED30475BF2 /* Pods_odai.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +93,8 @@
 			children = (
 				E604FBC9FFB28991968FECA9 /* Pods-sampleFireStore.debug.xcconfig */,
 				C15D6B68B9F968DD59FA732D /* Pods-sampleFireStore.release.xcconfig */,
+				0B7F1295768B6EE912DF77D3 /* Pods-odai.debug.xcconfig */,
+				9D7CFF209C168CD2D0BB2C75 /* Pods-odai.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -98,7 +102,7 @@
 		583407E9B06810F75464D3A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F8742FDA3F397C0222D5285E /* Pods_sampleFireStore.framework */,
+				72F521D248930691F7639B61 /* Pods_odai.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -286,7 +290,7 @@
 			);
 			mainGroup = BA79274426BDF85400311E1E;
 			packageReferences = (
-				BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift.git" */,
 			);
 			productRefGroup = BA79274E26BDF85400311E1E /* Products */;
 			projectDirPath = "";
@@ -332,7 +336,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-sampleFireStore-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-odai-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -345,15 +349,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-odai/Pods-odai-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-odai/Pods-odai-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-odai/Pods-odai-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BA7E8F4427D3759700484B65 /* Run SwiftLint */ = {
@@ -540,7 +544,7 @@
 		};
 		BA79276226BDF85800311E1E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E604FBC9FFB28991968FECA9 /* Pods-sampleFireStore.debug.xcconfig */;
+			baseConfigurationReference = 0B7F1295768B6EE912DF77D3 /* Pods-odai.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -560,7 +564,7 @@
 		};
 		BA79276326BDF85800311E1E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C15D6B68B9F968DD59FA732D /* Pods-sampleFireStore.release.xcconfig */;
+			baseConfigurationReference = 9D7CFF209C168CD2D0BB2C75 /* Pods-odai.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -602,7 +606,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
@@ -615,17 +619,17 @@
 /* Begin XCSwiftPackageProductDependency section */
 		BACB84C9287942A1007477D3 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
 			productName = RxCocoa;
 		};
 		BACB84CB287942A1007477D3 /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
 			productName = RxRelay;
 		};
 		BACB84CD287942A1007477D3 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
 			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

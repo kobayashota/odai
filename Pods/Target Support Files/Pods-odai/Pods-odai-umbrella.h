@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_sampleFireStoreVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_sampleFireStoreVersionString[];
+FOUNDATION_EXPORT double Pods_odaiVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_odaiVersionString[];
 
