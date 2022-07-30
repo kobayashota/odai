@@ -124,13 +124,13 @@
 		BA79274F26BDF85400311E1E /* odai */ = {
 			isa = PBXGroup;
 			children = (
-				C4D919FE27B80809004B2381 /* Common */,
-				C4D919FC27B804C2004B2381 /* Resources */,
 				C4D919FB27B80422004B2381 /* Application */,
+				C4D919FE27B80809004B2381 /* Common */,
+				BA79275B26BDF85800311E1E /* LaunchScreen.storyboard */,
+				BA79275626BDF85400311E1E /* Main.storyboard */,
 				BAFBC11926CFB38D005C0F35 /* Model */,
 				C4D919E627B7F8C5004B2381 /* Presentation */,
-				BA79275626BDF85400311E1E /* Main.storyboard */,
-				BA79275B26BDF85800311E1E /* LaunchScreen.storyboard */,
+				C4D919FC27B804C2004B2381 /* Resources */,
 			);
 			path = odai;
 			sourceTree = "<group>";
