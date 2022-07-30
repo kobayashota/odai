@@ -11,8 +11,8 @@ import Firebase
 final class CommentViewController: DismissKeyboardViewContoller {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var kaitouLabel: UILabel!
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var sendButton: UIButton!
 
     private var activeTextField: UITextField?
     var idString = String()
@@ -103,7 +103,7 @@ final class CommentViewController: DismissKeyboardViewContoller {
         }
     }
 
-    @IBAction func sendAction(_ sender: Any) {
+    @IBAction private func sendAction(_ sender: Any) {
         guard let text = textField.text else {
             return
         }

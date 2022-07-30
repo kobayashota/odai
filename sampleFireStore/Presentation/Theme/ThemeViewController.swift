@@ -80,7 +80,7 @@ final class ThemeViewController: UIViewController {
         textView.text = ""
     }
 
-    @IBAction func logout(_ sender: Any) {
+    @IBAction private func logout(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {
 

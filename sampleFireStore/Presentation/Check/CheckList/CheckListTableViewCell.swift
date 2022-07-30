@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import RxSwift
 
 final class CheckListTableViewCell: UITableViewCell {
-    @IBOutlet weak var answerLabel: UILabel!
-    @IBOutlet weak var likeButton: UIButton!
-    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet private weak var answerLabel: UILabel!
+    @IBOutlet private weak var likeButton: UIButton!
+    @IBOutlet private weak var countLabel: UILabel!
+
+    private let tapLikeSubject = PublishSubject<Void>()
+    var tapLike: Observable<Void> { tapLikeSubject }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,5 +22,45 @@ final class CheckListTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+
+    @IBAction private func tapLikeButton(_ sender: UIButton) {
+        tapLikeSubject.onNext(())
+    }
+
+    var answer: String? {
+        get {
+            answerLabel.text
+        }
+        set {
+            answerLabel.text = newValue
+        }
+    }
+
+    var answerNumberOfLines: Int {
+        get {
+            answerLabel.numberOfLines
+        }
+        set {
+            answerLabel.numberOfLines = newValue
+        }
+    }
+
+    var likeImage: UIImage? {
+        get {
+            likeButton.currentImage
+        }
+        set {
+            likeButton.setImage(newValue, for: .normal)
+        }
+    }
+
+    var count: String? {
+        get {
+            countLabel.text
+        }
+        set {
+            countLabel.text = newValue
+        }
     }
 }

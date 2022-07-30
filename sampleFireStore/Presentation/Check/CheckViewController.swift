@@ -7,14 +7,17 @@
 
 import UIKit
 import Firebase
+import RxSwift
+import RxCocoa
 
 final class CheckViewController: UIViewController {
     var odaiString = String()
     @IBOutlet private weak var odaiLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     let db = Firestore.firestore()
     var dataSets: [AnswerModel] = []
     var idString = String()
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,47 +70,53 @@ extension CheckViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CheckListTableViewCell", for: indexPath) as! CheckListTableViewCell
 
-        cell.answerLabel.numberOfLines = 0
-        cell.answerLabel.text = "\(dataSets[indexPath.row].userName)さんの回答\n\(dataSets[indexPath.row].answers)"
-        cell.likeButton.tag = indexPath.row
-        cell.countLabel.text = String(dataSets[indexPath.row].likeCount)
-        cell.likeButton.addTarget(self, action: #selector(like(_:)), for: .touchUpInside)
+        cell.answerNumberOfLines = 0
+
+        cell.answer = "\(dataSets[indexPath.row].userName)さんの回答\n\(dataSets[indexPath.row].answers)"
+
+        cell.tag = indexPath.row
+
+        cell.tapLike.subscribe(onNext: { [weak self] _ in
+            self?.like(cell.tag)
+        }).disposed(by: disposeBag)
+
+        cell.count = String(dataSets[indexPath.row].likeCount)
 
         if let likeFlag = dataSets[indexPath.row].likeFlagDic[idString] {
             if likeFlag {
-                cell.likeButton.setImage(UIImage(named: "like"), for: .normal)
+                cell.likeImage = UIImage(named: "like")
             } else {
-                cell.likeButton.setImage(UIImage(named: "notlike"), for: .normal)
+                cell.likeImage = UIImage(named: "notlike")
             }
         }
 
         return cell
     }
 
-    @objc private func like(_ sender: UIButton) {
+    private func like(_ tag: Int) {
         var count = Int()
-        let flag = dataSets[sender.tag].likeFlagDic[idString]
+        let flag = dataSets[tag].likeFlagDic[idString]
 
         if flag == nil {
 
-            count = dataSets[sender.tag].likeCount + 1
-            db.collection("Answers").document(dataSets[sender.tag].docID).setData(["likeFlagDic": [idString: true]], merge: true)
+            count = dataSets[tag].likeCount + 1
+            db.collection("Answers").document(dataSets[tag].docID).setData(["likeFlagDic": [idString: true]], merge: true)
 
         } else {
 
             if flag == true {
 
-                count = dataSets[sender.tag].likeCount - 1
-                db.collection("Answers").document(dataSets[sender.tag].docID).setData(["likeFlagDic": [idString: false]], merge: true)
+                count = dataSets[tag].likeCount - 1
+                db.collection("Answers").document(dataSets[tag].docID).setData(["likeFlagDic": [idString: false]], merge: true)
 
             } else {
-                count = dataSets[sender.tag].likeCount + 1
-                db.collection("Answers").document(dataSets[sender.tag].docID).setData(["likeFlagDic": [idString: true]], merge: true)
+                count = dataSets[tag].likeCount + 1
+                db.collection("Answers").document(dataSets[tag].docID).setData(["likeFlagDic": [idString: true]], merge: true)
 
             }
         }
 
-        db.collection("Answers").document(dataSets[sender.tag].docID).updateData(["like": count], completion: nil)
+        db.collection("Answers").document(dataSets[tag].docID).updateData(["like": count], completion: nil)
         tableView.reloadData()
     }
 

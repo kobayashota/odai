@@ -45,7 +45,7 @@ final class LoginViewController: UIViewController {
         }
     }
 
-    @IBAction func done(_ sender: Any) {
+    @IBAction private func done(_ sender: Any) {
         login()
     }
 
