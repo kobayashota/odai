@@ -94,26 +94,20 @@ extension CheckViewController: UITableViewDataSource {
     }
 
     private func like(_ tag: Int) {
+        guard let isLike = dataSets[tag].likeFlagDic[idString] else {
+            debugPrint("isLike nil")
+            db.collection("Answers").document(dataSets[tag].docID).setData(["likeFlagDic": [idString: true]], merge: true)
+            return
+        }
+
         var count = Int()
-        let flag = dataSets[tag].likeFlagDic[idString]
 
-        if flag == nil {
-
+        if isLike {
+            count = dataSets[tag].likeCount - 1
+            db.collection("Answers").document(dataSets[tag].docID).setData(["likeFlagDic": [idString: false]], merge: true)
+        } else {
             count = dataSets[tag].likeCount + 1
             db.collection("Answers").document(dataSets[tag].docID).setData(["likeFlagDic": [idString: true]], merge: true)
-
-        } else {
-
-            if flag == true {
-
-                count = dataSets[tag].likeCount - 1
-                db.collection("Answers").document(dataSets[tag].docID).setData(["likeFlagDic": [idString: false]], merge: true)
-
-            } else {
-                count = dataSets[tag].likeCount + 1
-                db.collection("Answers").document(dataSets[tag].docID).setData(["likeFlagDic": [idString: true]], merge: true)
-
-            }
         }
 
         db.collection("Answers").document(dataSets[tag].docID).updateData(["like": count], completion: nil)
