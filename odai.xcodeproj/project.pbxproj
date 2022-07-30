@@ -59,7 +59,6 @@
 		BAFBC11C26CFB617005C0F35 /* DBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBModel.swift; sourceTree = "<group>"; };
 		BAFBC11E26D0F2DE005C0F35 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		BAFBC12026D0F598005C0F35 /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
-		C15D6B68B9F968DD59FA732D /* Pods-sampleFireStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleFireStore.release.xcconfig"; path = "Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore.release.xcconfig"; sourceTree = "<group>"; };
 		C408152A27B8A5B00056A25B /* DismissKeyboardViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboardViewContoller.swift; sourceTree = "<group>"; };
 		C484BF3527B75EC700248AE4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C4D919E827B7F92F004B2381 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -70,7 +69,6 @@
 		C4D919F427B7FB76004B2381 /* Check.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Check.storyboard; sourceTree = "<group>"; };
 		C4D919F727B7FBE9004B2381 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		C4D919F927B7FBF2004B2381 /* Comment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Comment.storyboard; sourceTree = "<group>"; };
-		E604FBC9FFB28991968FECA9 /* Pods-sampleFireStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sampleFireStore.debug.xcconfig"; path = "Target Support Files/Pods-sampleFireStore/Pods-sampleFireStore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,8 +89,6 @@
 		10EE92FEE7251F61E34B3A21 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E604FBC9FFB28991968FECA9 /* Pods-sampleFireStore.debug.xcconfig */,
-				C15D6B68B9F968DD59FA732D /* Pods-sampleFireStore.release.xcconfig */,
 				0B7F1295768B6EE912DF77D3 /* Pods-odai.debug.xcconfig */,
 				9D7CFF209C168CD2D0BB2C75 /* Pods-odai.release.xcconfig */,
 			);
@@ -290,7 +286,7 @@
 			);
 			mainGroup = BA79274426BDF85400311E1E;
 			packageReferences = (
-				BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift.git" */,
+				BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = BA79274E26BDF85400311E1E /* Products */;
 			projectDirPath = "";
@@ -606,7 +602,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift.git" */ = {
+		BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
@@ -619,17 +615,17 @@
 /* Begin XCSwiftPackageProductDependency section */
 		BACB84C9287942A1007477D3 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
 		BACB84CB287942A1007477D3 /* RxRelay */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxRelay;
 		};
 		BACB84CD287942A1007477D3 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = BACB84C8287942A1007477D3 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
