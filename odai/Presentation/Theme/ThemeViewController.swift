@@ -7,7 +7,6 @@
 
 import UIKit
 import Firebase
-import EMAlertController
 
 final class ThemeViewController: UIViewController {
     private let db1 = Firestore.firestore().collection("Odai").document("AOoJ18TmBOrB6xlzS3ma")
@@ -70,12 +69,10 @@ final class ThemeViewController: UIViewController {
             ]
         )
 
-        let alert = EMAlertController(icon: UIImage(named: "check"),
-                                      title: "投稿完了！",
-                                      message: "みんなの回答を見てみよう！")
-        let doneAction = EMAlertAction(title: "OK",
-                                       style: .normal)
+        let alert = UIAlertController(title: "投稿完了！", message: "みんなの回答を見てみよう！", preferredStyle: .actionSheet)
+        let doneAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(doneAction)
+
         present(alert, animated: true, completion: nil)
         textView.text = ""
     }
