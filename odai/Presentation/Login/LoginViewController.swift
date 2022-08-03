@@ -10,9 +10,12 @@ import Firebase
 
 final class LoginViewController: UIViewController {
     @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var ketteiButton: UIButton!
+    private let indicatorView = UIActivityIndicatorView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupIndicator()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -22,7 +25,17 @@ final class LoginViewController: UIViewController {
     }
 
     private func login() {
+        DispatchQueue.main.async { [weak self] in
+            self?.view.alpha = 0.8
+            self?.indicatorView.startAnimating()
+        }
+
         Auth.auth().signInAnonymously { [weak self] result, error in
+            DispatchQueue.main.async {
+                self?.view.alpha = 1.0
+                self?.indicatorView.stopAnimating()
+            }
+
             if let error = error {
                 self?.showAlert(message: error.localizedDescription)
                 return
@@ -58,6 +71,16 @@ final class LoginViewController: UIViewController {
 
     private func showTheme() {
         performSegue(withIdentifier: "Theme", sender: nil)
+    }
+
+    private func setupIndicator() {
+        indicatorView.style = .large
+        indicatorView.center.x = view.center.x
+        indicatorView.center.y = ketteiButton.center.y
+        indicatorView.color = .white
+        // アニメーション停止と同時に隠す設定
+        indicatorView.hidesWhenStopped = true
+        view.addSubview(indicatorView)
     }
 }
 
