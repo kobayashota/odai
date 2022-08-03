@@ -32,16 +32,14 @@ final class LoginViewController: UIViewController {
             debugPrint(user!)
 
             guard let username = self?.textField.text else {
+                UserDefaults.standard.set("名無し", forKey: "userName")
+                self?.showTheme()
                 return
             }
 
-            if username.isEmpty {
-                UserDefaults.standard.set("名無し", forKey: "userName")
-            } else {
-                UserDefaults.standard.set(self?.textField.text, forKey: "userName")
-            }
+            UserDefaults.standard.set(username, forKey: "userName")
 
-            self?.performSegue(withIdentifier: "Theme", sender: nil)
+            self?.showTheme()
         }
     }
 
@@ -56,6 +54,10 @@ final class LoginViewController: UIViewController {
         }
         alert.addAction(confirmAction)
         present(alert, animated: true, completion: nil)
+    }
+
+    private func showTheme() {
+        performSegue(withIdentifier: "Theme", sender: nil)
     }
 }
 
