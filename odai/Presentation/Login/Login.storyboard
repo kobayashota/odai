@@ -85,7 +85,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="NrO-Ge-Jcl"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="ketteiButton" destination="dPz-d2-15u" id="k1u-Es-5im"/>
+                        <outlet property="decisionButton" destination="dPz-d2-15u" id="k1u-Es-5im"/>
                         <outlet property="textField" destination="h3H-6g-aaO" id="goW-5b-dxh"/>
                         <segue destination="DhD-5O-GL9" kind="show" identifier="Theme" id="krf-wv-Byc"/>
                     </connections>

@@ -10,7 +10,7 @@ import Firebase
 
 final class LoginViewController: UIViewController {
     @IBOutlet private weak var textField: UITextField!
-    @IBOutlet private weak var ketteiButton: UIButton!
+    @IBOutlet private weak var decisionButton: UIButton!
     private let indicatorView = UIActivityIndicatorView()
 
     override func viewDidLoad() {
@@ -76,7 +76,7 @@ final class LoginViewController: UIViewController {
     private func setupIndicator() {
         indicatorView.style = .large
         indicatorView.center.x = view.center.x
-        indicatorView.center.y = ketteiButton.center.y
+        indicatorView.center.y = decisionButton.center.y
         indicatorView.color = .white
         // アニメーション停止と同時に隠す設定
         indicatorView.hidesWhenStopped = true
