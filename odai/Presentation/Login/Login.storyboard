@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DmR-7O-GAe">
-                                <rect key="frame" x="40" y="361" width="334" height="174"/>
+                                <rect key="frame" x="40" y="399" width="334" height="98"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あなたの名前を教えてください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLs-4B-eAt">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="24"/>
@@ -52,19 +52,22 @@
                                             <outlet property="delegate" destination="aaS-Rv-OZz" id="pHz-g1-9tk"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPz-d2-15u">
-                                        <rect key="frame" x="0.0" y="138" width="334" height="36"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <state key="normal" title="決定">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="done:" destination="aaS-Rv-OZz" eventType="touchUpInside" id="sfd-dW-n3r"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPz-d2-15u">
+                                <rect key="frame" x="40" y="774" width="334" height="44"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="R11-Xu-7ij"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="決定">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="done:" destination="aaS-Rv-OZz" eventType="touchUpInside" id="sfd-dW-n3r"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ruH-8O-4Aa"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -72,6 +75,10 @@
                             <constraint firstItem="DmR-7O-GAe" firstAttribute="centerY" secondItem="PyK-Il-Evy" secondAttribute="centerY" id="0Rv-Za-5Xy"/>
                             <constraint firstItem="ruH-8O-4Aa" firstAttribute="trailing" secondItem="DmR-7O-GAe" secondAttribute="trailing" constant="40" id="2nU-bK-4JR"/>
                             <constraint firstItem="DmR-7O-GAe" firstAttribute="leading" secondItem="ruH-8O-4Aa" secondAttribute="leading" constant="40" id="DgU-uD-Nt4"/>
+                            <constraint firstItem="ruH-8O-4Aa" firstAttribute="bottom" secondItem="dPz-d2-15u" secondAttribute="bottom" constant="44" id="KbV-YQ-vft"/>
+                            <constraint firstItem="ruH-8O-4Aa" firstAttribute="trailing" secondItem="dPz-d2-15u" secondAttribute="trailing" constant="40" id="Ter-Ha-026"/>
+                            <constraint firstItem="dPz-d2-15u" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DmR-7O-GAe" secondAttribute="bottom" constant="20" id="VVp-qt-n0A"/>
+                            <constraint firstItem="dPz-d2-15u" firstAttribute="leading" secondItem="ruH-8O-4Aa" secondAttribute="leading" constant="40" id="fXD-sv-vcd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Qzl-2N-mox">
