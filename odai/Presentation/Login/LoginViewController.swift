@@ -75,8 +75,7 @@ final class LoginViewController: UIViewController {
 
     private func setupIndicator() {
         indicatorView.style = .large
-        indicatorView.center.x = view.center.x
-        indicatorView.center.y = decisionButton.center.y
+        indicatorView.center = view.center
         indicatorView.color = .white
         // アニメーション停止と同時に隠す設定
         indicatorView.hidesWhenStopped = true
