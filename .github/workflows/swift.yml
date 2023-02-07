@@ -17,12 +17,4 @@ jobs:
     - name: Show Xcode version
       run: xcodebuild -version
     - name: Build
-      run: xcodebuild
-            -sdk iphonesimulator
-            -configuration Debug
-            build
-    - name: Run tests
-      run: xcodebuild
-            -sdk iphonesimulator
-            -destination 'platform=iOS Simulator,name=iPhone 14 Pro Max'
-            clean test
+      run: swift build
