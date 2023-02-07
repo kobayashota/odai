@@ -18,13 +18,11 @@ jobs:
       run: xcodebuild -version
     - name: Build
       run: xcodebuild
-            -scheme Debug
             -sdk iphonesimulator
             -configuration Debug
             build
     - name: Run tests
       run: xcodebuild
-            -scheme Debug
             -sdk iphonesimulator
             -destination 'platform=iOS Simulator,name=iPhone 14 Pro Max'
             clean test
