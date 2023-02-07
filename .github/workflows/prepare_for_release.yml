@@ -1,0 +1,23 @@
+name: Prepare for release
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump_type:
+        description: 'Bump Type(minor or major)'
+        required: true
+        default: 'minor'
+        
+jobs:
+  prepare_release:
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: develop
+    - name: Increment and commit version
+      run: |
+        xcodes select 14.2
+        bundle install
+        bundle exec fastlane prepare_release bump_type:${{ github.event.inputs.bump_type }}
+      
