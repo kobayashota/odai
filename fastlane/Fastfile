@@ -50,7 +50,7 @@ platform :ios do
   # add actions here: https://docs.fastlane.tools/actions
     import_certificate_and_provisioning_profile
     build_app(
-        scheme: "Release",
+        configuration: "Release",
         export_method: "app-store"
     )
   end
