@@ -31,7 +31,6 @@ platform :ios do
 
   desc "import certificate and provisioning profile" 
   private_lane :import_certificate_and_provisioning_profile do
-    match_all
     prepare_app_store_connect_api_key
     
     create_keychain(
