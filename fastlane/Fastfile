@@ -19,6 +19,7 @@ ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "60"
 default_platform(:ios)
 
 platform :ios do
+  apple_id ENV["USERNAME"]
 
   desc "import certificate and provisioning profile" 
   private_lane :import_certificate_and_provisioning_profile do
@@ -64,7 +65,6 @@ platform :ios do
     build_ipa
     prepare_app_store_connect_api_key
     upload_to_testflight(
-        username: ENV["USERNAME"],
         app_identifier: "com.kobashou06.odai"
         )
   end
