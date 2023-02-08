@@ -45,10 +45,11 @@ platform :ios do
         )
     get_provisioning_profile(
         provisioning_name: "odai_app_store",
+        filename: "odai_app_store.mobileprovision",
         output_path: "./",
         readonly: true
         )
-    install_provisioning_profile(path: "./odai_app_store.mobileprovision")
+    install_provisioning_profile(path: "odai_app_store.mobileprovision")
   end
   
   lane :build_ipa do
