@@ -58,11 +58,7 @@ platform :ios do
         configuration: "Release",
         xcargs: "-allowProvisioningUpdates",
         cloned_source_packages_path: "SourcePackages",
-        export_method: "app-store",
-        export_options: {
-          provisioningProfiles: {
-            "com.kobashou06.odai" => "odai_app_store.mobileprovision"
-          }
+        export_method: "app-store"
         }
     )
 
