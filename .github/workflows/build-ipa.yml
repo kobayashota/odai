@@ -21,11 +21,12 @@ jobs:
       run: bundle install --jobs 4 --retry 3
       
     - name: Cache SPM
-      uses: actions/cache@v1
+    - uses: actions/cache@v3
       with:
         path: SourcePackages
-        key: ${{ runner.os }}-spm-${{ hashFiles('*.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved' }}
-        restore-keys: ${{ runner.os }}-spm-
+        key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-spm-
     
     - name: Fastlane
       env:
