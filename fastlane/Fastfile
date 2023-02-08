@@ -32,7 +32,9 @@ platform :ios do
         keychain_name: "mykeychain",
         keychain_password: ENV["KEYCHAIN_PASSWORD"]
         )
-    install_provisioning_profile(path: "odai_app_store.mobileprovision")
+    get_provisioning_profile(
+        provisioning_name: "odai_app_store"
+        )
   end
   
   lane :build_ipa do
