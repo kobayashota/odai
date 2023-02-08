@@ -48,7 +48,7 @@ platform :ios do
         output_path: "./"
         readonly: true
         )
-    install_provisioning_profile(path: 
+    install_provisioning_profile(path: "./odai_app_store.mobileprovision")
   end
   
   lane :build_ipa do
