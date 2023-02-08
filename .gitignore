@@ -138,4 +138,11 @@ iOSInjectionProject/
 xcuserdata
 #*.xcodeproj
 
+### keys ###
+*.p8
+*.p12
+
+### provisioning profiles ###
+*.mobileprovision
+
 # End of https://www.toptal.com/developers/gitignore/api/swift,swiftpm,swiftpackagemanager,macos,xcode,carthage,cocoapods
