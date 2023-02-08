@@ -54,12 +54,7 @@ platform :ios do
   # add actions here: https://docs.fastlane.tools/actions
     import_certificate_and_provisioning_profile
     build_app(
-        clean: true,
-        cloned_source_packages_path: "SourcePackages",
-        export_method: "app-store",
-        export_options: {
-          "com.kobashou06.odai" => "odai_app_store"
-        }
+        cloned_source_packages_path: "SourcePackages"
     )
 
   end
