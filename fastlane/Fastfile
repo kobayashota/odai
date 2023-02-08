@@ -49,19 +49,18 @@ platform :ios do
         output_path: "./",
         readonly: true
         )
-    install_provisioning_profile(path: "odai_app_store.mobileprovision")
   end
   
   lane :build_ipa do
   # add actions here: https://docs.fastlane.tools/actions
     import_certificate_and_provisioning_profile
-    build_app(
-        clean: true,
-        configuration: "Release",
-        xcargs: "-allowProvisioningUpdates",
-        cloned_source_packages_path: "SourcePackages",
-        export_method: "app-store"
-    )
+    #build_app(
+     #   clean: true,
+      #  configuration: "Release",
+       # xcargs: "-allowProvisioningUpdates",
+        #cloned_source_packages_path: "SourcePackages",
+        #export_method: "app-store"
+    #)
 
   end
   
