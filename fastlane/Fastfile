@@ -37,6 +37,7 @@ platform :ios do
   
   lane :build_ipa do
   # add actions here: https://docs.fastlane.tools/actions
+    import_certificate_and_provisioning_profile
     build_app(
         clean: true,
         configuration: "Release",
@@ -58,7 +59,6 @@ platform :ios do
   
   desc "Description of what the lane does"
   lane :upload_testflight do
-    import_certificate_and_provisioning_profile
     build_ipa
     prepare_app_store_connect_api_key
     upload_to_testflight(
