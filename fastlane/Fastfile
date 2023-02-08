@@ -67,8 +67,7 @@ platform :ios do
   lane :upload_testflight do
     build_ipa
     upload_to_testflight(
-        username: ENV["USERNAME"],
-        app_identifier: "com.kobashou06.odai"
+        username: ENV["USERNAME"]
         )
   end
   
