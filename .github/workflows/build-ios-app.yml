@@ -1,6 +1,6 @@
-name: fastlane build app
+name: build-ios-app
 
-on: [workflow_dispatch]
+on: [push, workflow_dispatch]
 
 jobs:
   build:
