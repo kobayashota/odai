@@ -19,22 +19,6 @@ ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
 default_platform(:ios)
 
 platform :ios do
-  lane :match_all do
-    setup_circle_ci
-    match_appstore
-  end
-  
-  private_lane :match_appstore do
-    match(
-      app_identifier: ["com.kobashou06.odai"],
-      type: "appstore",
-      git_url: "https://github.com/kobayashota/ios-certificates",
-      git_basic_authorization: ENV["GIT_PRIVATE_KEY"],
-      team_id: "95F386KH36",
-      git_branch: "master",
-      username: ENV["ITUNES_CONNECT_ACCOUNT"]
-    )
-  end
   
   private_lane :prepare_app_store_connect_api_key do
   app_store_connect_api_key(
@@ -60,13 +44,15 @@ platform :ios do
         keychain_name: "mykeychain",
         keychain_password: ENV["KEYCHAIN_PASSWORD"]
         )
+    install_provisioning_profile(path: "odai_app_store.mobileprovision")
   end
   
   lane :build_ipa do
   # add actions here: https://docs.fastlane.tools/actions
     import_certificate_and_provisioning_profile
     build_app(
-        scheme: "Release"
+        scheme: "Release",
+        export_method: "app-store"
     )
   end
   
