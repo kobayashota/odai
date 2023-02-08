@@ -14,12 +14,12 @@
 # update_fastlane
 
 # Global values
+apple_id ENV["USERNAME"]
 ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "60"
 
 default_platform(:ios)
 
 platform :ios do
-  apple_id ENV["USERNAME"]
 
   desc "import certificate and provisioning profile" 
   private_lane :import_certificate_and_provisioning_profile do
