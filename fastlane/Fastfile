@@ -45,7 +45,7 @@ platform :ios do
         )
     get_provisioning_profile(
         provisioning_name: "odai_app_store",
-        output_path: "./"
+        output_path: "./",
         readonly: true
         )
     install_provisioning_profile(path: "./odai_app_store.mobileprovision")
