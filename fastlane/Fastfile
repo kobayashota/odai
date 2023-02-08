@@ -55,10 +55,11 @@ platform :ios do
     import_certificate_and_provisioning_profile
     build_app(
         clean: true,
-        configuration: "Debug",
-        xcargs: "-allowProvisioningUpdates",
         cloned_source_packages_path: "SourcePackages",
-        export_method: "app-store"
+        export_method: "app-store",
+        export_options: {
+          "com.kobashou06.odai" => "odai_app_store"
+        }
     )
 
   end
