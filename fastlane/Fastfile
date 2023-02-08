@@ -43,20 +43,18 @@ platform :ios do
         keychain_name: "mykeychain",
         keychain_password: ENV["KEYCHAIN_PASSWORD"]
         )
-    get_provisioning_profile(
-        provisioning_name: "odai_app_store",
-        filename: "odai_app_store.mobileprovision",
-        readonly: true
-        )
+    match(
+        type: "appstore",
+        readonly: is_ci
+      )
   end
   
   lane :build_ipa do
   # add actions here: https://docs.fastlane.tools/actions
     import_certificate_and_provisioning_profile
     build_app(
-        cloned_source_packages_path: "SourcePackages"
+        scheme: "Release"
     )
-
   end
   
   
