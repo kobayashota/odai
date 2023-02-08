@@ -15,6 +15,11 @@ jobs:
     - name: Show Xcode version
       run: xcodebuild -version
       
+    - name: Prepare keychain.p12
+      run: |
+        echo "${{ secrets.BUILD_CERTIFICATE_BASE64 }}" > ios_distribution.p12.txt
+        base64 --decode ios_distribution.p12.txt > ios_distribution.p12
+      
     - name: Update bundler
       run: gem update bundler
       
