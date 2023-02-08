@@ -44,7 +44,8 @@ platform :ios do
         keychain_password: ENV["KEYCHAIN_PASSWORD"]
         )
     get_provisioning_profile(
-        provisioning_name: "odai_app_store"
+        provisioning_name: "odai_app_store",
+        readonly: true
         )
   end
   
