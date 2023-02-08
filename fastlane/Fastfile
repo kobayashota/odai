@@ -55,7 +55,7 @@ platform :ios do
     import_certificate_and_provisioning_profile
     build_app(
         clean: true,
-        configuration: "Release",
+        configuration: "Debug",
         xcargs: "-allowProvisioningUpdates",
         cloned_source_packages_path: "SourcePackages",
         export_method: "app-store"
