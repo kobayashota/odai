@@ -54,7 +54,7 @@ platform :ios do
       clean: true,
       silent: true,
       include_bitcode: false,
-      skip_package_ipa: true,
+      skip_package_ipa: false,
       skip_codesigning: true,
       project: "odai.xcodeproj",
       configuration: "Release",
