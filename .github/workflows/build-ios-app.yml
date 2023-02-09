@@ -26,7 +26,7 @@ jobs:
     
     - name: Decode provisioning profile
       run: |
-        echo "${{ secrets.PROVISIONING_PROFILE_APP_STORE }}" > odai_app_store.mobileprovision.txt
+        echo "${{ secrets.APP_STORE_PROVISIONING_PROFILE }}" > odai_app_store.mobileprovision.txt
         base64 --decode odai_app_store.mobileprovision.txt > odai_app_store.mobileprovision
     
     - name: Setup Ruby
