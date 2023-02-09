@@ -24,6 +24,12 @@ jobs:
       run: |
         echo "${{ secrets.PROVISIONING_PROFILE_APP_STORE }}" > odai_app_store.mobileprovision.txt
         base64 --decode odai_app_store.mobileprovision.txt > odai_app_store.mobileprovision
+    
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.2.0
+        bundler-cache: true
         
     - name: Update bundler
       run: gem update bundler && bundle -v && which bundle
