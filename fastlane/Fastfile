@@ -55,7 +55,7 @@ platform :ios do
       silent: true,
       include_bitcode: false,
       skip_package_ipa: true,
-      skip_codesigning: true,
+      skip_codesigning: false,
       project: "odai.xcodeproj",
       configuration: "Release",
       cloned_source_packages_path: "SourcePackages",
