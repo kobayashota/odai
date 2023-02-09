@@ -49,14 +49,22 @@ platform :ios do
   lane :build_ipa do
   # add actions here: https://docs.fastlane.tools/actions
     import_certificate_and_provisioning_profile
+    
+    match(
+      type: "appstore",
+      readonly: is_ci,
+      keychain_name: "mykeychain",
+      keychain_password: ENV["MATCH_PASSWORD"],
+    )
+    
     build_app(
       project: "odai.xcodeproj",
       clean: true,
       configuration: "Release",
       silent: true,
-      #skip_package_ipa: true,
+#       skip_package_ipa: true,
       include_bitcode: false,
-      skip_codesigning: true,
+#       skip_codesigning: true,
       xcargs: "-allowProvisioningUpdates",
       cloned_source_packages_path: "SourcePackages",
       export_team_id: ENV["TEAM_ID"]
