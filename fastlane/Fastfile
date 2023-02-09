@@ -51,8 +51,14 @@ platform :ios do
     import_certificate_and_provisioning_profile
     build_app(
       project: "odai.xcodeproj",
+      clean: true,
       configuration: "Release",
-      skip_package_ipa: true
+      silent: true,
+      skip_package_ipa: true,
+      include_bitcode: false,
+      skip_archive: true,
+      skip_codesigning: true,
+      xcargs: "-allowProvisioningUpdates"
     )
   end
   
