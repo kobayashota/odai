@@ -51,16 +51,17 @@ platform :ios do
     import_certificate_and_provisioning_profile
     
     build_app(
-      project: "odai.xcodeproj",
       clean: true,
-      configuration: "Release",
       silent: true,
-#       skip_package_ipa: true,
       include_bitcode: false,
+#       skip_package_ipa: true,
 #       skip_codesigning: true,
-      xcargs: "-allowProvisioningUpdates",
+      project: "odai.xcodeproj",
+      configuration: "Release",
       cloned_source_packages_path: "SourcePackages",
-      export_team_id: ENV["TEAM_ID"]
+      xcargs: "-allowProvisioningUpdates",
+      export_method: "app-store"
+      export_team_id: ENV["TEAM_ID"],
     )
   end
   
