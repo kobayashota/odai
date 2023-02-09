@@ -58,7 +58,8 @@ platform :ios do
       include_bitcode: false,
       skip_codesigning: true,
       xcargs: "-allowProvisioningUpdates",
-      cloned_source_packages_path: "SourcePackages"
+      cloned_source_packages_path: "SourcePackages",
+      export_team_id: ENV["TEAM_ID"]
     )
   end
   
