@@ -59,7 +59,7 @@ platform :ios do
       skip_archive: true,
       skip_codesigning: true,
       xcargs: "-allowProvisioningUpdates",
-      cloned_source_package_path: "SourcePackages"
+      cloned_source_packages_path: "SourcePackages"
     )
   end
   
