@@ -58,7 +58,7 @@ platform :ios do
       include_bitcode: false,
       skip_archive: true,
       skip_codesigning: true,
-      xcargs: "-allowProvisioningUpdates"
+      xcargs: "-allowProvisioningUpdates",
       cloned_source_package_path: "SourcePackages"
     )
   end
