@@ -54,6 +54,7 @@ jobs:
         ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
         ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
         ASC_KEY_CONTENT_BASE64: ${{ secrets.ASC_KEY_CONTENT_BASE64 }},
-        USERNAME: ${{ secrets.USERNAME }}
+        USERNAME: ${{ secrets.USERNAME }},
+        TEAM_ID: ${{ secrets.TEAM_ID }}
       run: bundle exec fastlane ios build_ipa
       timeout-minutes: 40
