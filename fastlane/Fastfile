@@ -54,9 +54,8 @@ platform :ios do
       clean: true,
       configuration: "Release",
       silent: true,
-      skip_package_ipa: true,
+      #skip_package_ipa: true,
       include_bitcode: false,
-      #skip_archive: true,
       skip_codesigning: true,
       xcargs: "-allowProvisioningUpdates",
       cloned_source_packages_path: "SourcePackages"
