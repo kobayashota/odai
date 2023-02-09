@@ -49,7 +49,10 @@ platform :ios do
   lane :build_ipa do
   # add actions here: https://docs.fastlane.tools/actions
     import_certificate_and_provisioning_profile
-    build_app(configuration: "Debug")
+    build_app(
+      project: "odai.xcodeproj",
+      configuration: "Release"
+    )
   end
   
   desc "Description of what the lane does"
