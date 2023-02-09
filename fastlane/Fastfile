@@ -59,7 +59,7 @@ platform :ios do
       project: "odai.xcodeproj",
       configuration: "Release",
       cloned_source_packages_path: "SourcePackages",
-      export_xcargs: "-allowProvisioningUpdates",
+      xcargs: "-allowProvisioningUpdates",
       export_method: "app-store",
       export_team_id: ENV["TEAM_ID"],
       export_options: {
