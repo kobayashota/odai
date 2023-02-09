@@ -60,7 +60,7 @@ platform :ios do
       configuration: "Release",
       cloned_source_packages_path: "SourcePackages",
       xcargs: "-allowProvisioningUpdates",
-      export_method: "app-store"
+      export_method: "app-store",
       export_team_id: ENV["TEAM_ID"],
     )
   end
