@@ -54,14 +54,14 @@ platform :ios do
       clean: true,
       silent: true,
       include_bitcode: false,
-#       skip_package_ipa: true,
-#       skip_codesigning: true,
+      skip_package_ipa: true,
+      skip_codesigning: true,
       project: "odai.xcodeproj",
       configuration: "Release",
       cloned_source_packages_path: "SourcePackages",
       xcargs: "-allowProvisioningUpdates",
       export_method: "app-store",
-      export_team_id: ENV["TEAM_ID"],
+      export_team_id: ENV["TEAM_ID"]
     )
   end
   
