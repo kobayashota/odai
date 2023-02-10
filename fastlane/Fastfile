@@ -70,5 +70,26 @@ platform :ios do
         )
   end
   
+  desc "Bump minor version"
+  lane :bump_minor do
+    increment_version_number(bump_type: "minor")
+    increment_build_number
+    commit_and_tag
+  end
+
+  def commit_and_tag
+    version_number = get_version_number target: 'odai'
+    build_number = get_build_number
+    branch_name = "#{version_number}"
+    message = "ci: bump version v#{version_number} (#{build_number})"
+
+    sh "git checkout -b 'release/v#{branch_name}'"
+    sh "git commit -a -m '#{message}'"
+    sh 'git push origin HEAD'
+
+    add_git_tag(tag: "v#{version_number}")
+    sh 'git push --tags'
+  end
+  
   
 end
