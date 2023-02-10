@@ -1,38 +1,35 @@
-name: create PR by github-actions[bot]
+name: Create a Release Pull Request
+
 on:
-  push:
-    branches-ignore:
-      - "main"
   workflow_dispatch:
-  
-env:
-  BASE_BRANCH: main
-  REVIEWER: kobayashota
 
 jobs:
   create_pr:
-    # ブランチが作成されただけならスキップ
-    if: ${{ !github.event.created }}
-    runs-on: ubuntu-latest
+    runs-on: macos-12
+
     steps:
-      # チェックアウト
       - uses: actions/checkout@v3
+      
+      # https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-ruby#caching-dependencies
+      - uses: actions/cache@v3
         with:
-          # PRのタイトルとかをコミット履歴から取得するので、
-          # fetch-depthを0に設定して全履歴を取得
-          fetch-depth: 0
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
 
-      # PRがすでに存在していないかのチェック
-      # gh pr listでbase/headのブランチが同じPR検索して判定
-      - name: check PR
-        id: check_pr
+      - name: Bundle install
         run: |
-          echo "count=$(gh pr list -B ${{ env.BASE_BRANCH }} -H ${{ github.ref_name }} --json 'id' -q '.[] | length')" >> $GITHUB_OUTPUT
+          bundle config path vendor/bundle
+          bundle install --jobs 4 --retry 3
 
-      # PRがまだなかったらghコマンドで生成
-      - name: Create PR
-        if: ${{ steps.check_pr.outputs.count == '' }}
-        run: gh pr create --fill -B ${{ env.BASE_BRANCH }} -r ${{ env.REVIEWER }}
+      - name: Bump minor version then create a release branch and tag
+        run: bundle exec fastlane bump_minor
+
+      - name: Create a pull request
         env:
-          # github-actions[bot]のトークンを使って作成するために設定
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=$(agvtool what-marketing-version -terse1)
+          BODY=$(gh api --method POST -H "Accept: application/vnd.github+json" /repos/{owner}/{repo}/releases/generate-notes -f tag_name="v$VERSION" -f target_commitish='main' | jq --raw-output .body)
+          gh pr create --base main --head "release/v$VERSION" --title "release v$VERSION" --body "$BODY" --label "release"
