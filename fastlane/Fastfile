@@ -57,6 +57,7 @@ platform :ios do
     
     match(
       api_key: api_key,
+      username: ENV["ITUNES_CONNECT_ACCOUNT"],
       type: "appstore",
       readonly: true,
       git_basic_authorization: ENV['MATCH_GIT_BASIC_AUTHORIZATION']
