@@ -28,6 +28,11 @@ jobs:
       run: |
         echo "${{ secrets.APP_STORE_PROVISIONING_PROFILE }}" > odai_app_store.mobileprovision.txt
         base64 --decode odai_app_store.mobileprovision.txt > odai_app_store.mobileprovision
+        
+    - name: Decode App Store Connect API Key
+      run: |
+        echo "${{ secrets.ASC_KEY_CONTENT_BASE64 }}" > AuthKey_"${{ secrets.ASC_KEY_ID }}".p8.txt
+        base64 --decode AuthKey_"${{ secrets.ASC_KEY_ID }}".p8.txt > AuthKey_"${{ secrets.ASC_KEY_ID }}".p8
     
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
@@ -73,3 +78,13 @@ jobs:
           -project odai.xcodeproj \
           -scheme "odai" \
           -configuration Release
+          
+    - name: Export ipa
+      run: |
+        xcodebuild \
+          -exportArchive \
+          -authenticationKeyPath AuthKey_"${{ secrets.ASC_KEY_ID }}".p8 \
+          -authenticationKeyID "${{ secrets.ASC_KEY_ID }}" \
+          -authenticationKeyIssuerID "${{ secrets.ASC_KEY_ISSUER_ID }}" \
+          -allowProvisioningUpdates
+
