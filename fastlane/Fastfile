@@ -48,7 +48,7 @@ platform :ios do
   
   lane :build_ipa do
   # add actions here: https://docs.fastlane.tools/actions
-#     import_certificate_and_provisioning_profile
+    import_certificate_and_provisioning_profile
     
 #     match(type: "appstore")
     
