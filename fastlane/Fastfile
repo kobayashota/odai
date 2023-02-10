@@ -50,13 +50,18 @@ platform :ios do
   # add actions here: https://docs.fastlane.tools/actions
 #     import_certificate_and_provisioning_profile
     
-    match(type: "appstore")
+#     match(type: "appstore")
     
     build_app(
       clean: true,
       silent: true,
-      cloned_source_packages_path: "SourcePackages"
+      cloned_source_packages_path: "SourcePackages",
       #xcargs: "-allowProvisioningUpdates -authenticationKeyID #{ENV["ASC_KEY_ID"]} -authenticationKeyIssuerID #{ENV["ASC_ISSUER_ID"]}",
+      export_method: "development",
+      export_options: {
+        method: "development",
+        teamID: ENV["TEAM_ID"]
+      }
     )
   end
   
