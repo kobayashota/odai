@@ -24,7 +24,10 @@ jobs:
           bundle install --jobs 4 --retry 3
 
       - name: Bump minor version then create a release branch and tag
-        run: bundle exec fastlane bump_minor
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          bundle exec fastlane bump_minor
 
       - name: Create a pull request
         env:
@@ -32,4 +35,4 @@ jobs:
         run: |
           VERSION=$(agvtool what-marketing-version -terse1)
           BODY=$(gh api --method POST -H "Accept: application/vnd.github+json" /repos/{owner}/{repo}/releases/generate-notes -f tag_name="v$VERSION" -f target_commitish='main' | jq --raw-output .body)
-          gh pr create --base main --head "release/v$VERSION" --title "release v$VERSION" --body "$BODY" --label "release"
+          gh pr create --base main --head "release/v$VERSION" --title "release v$VERSION" --body "$BODY"
