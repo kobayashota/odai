@@ -74,10 +74,10 @@ platform :ios do
   lane :bump_minor do
     increment_version_number(bump_type: "minor")
     increment_build_number
-    commit_and_tag
+    commit
   end
 
-  def commit_and_tag
+  def commit
     version_number = get_version_number target: 'odai'
     build_number = get_build_number
     branch_name = "#{version_number}"
@@ -86,7 +86,10 @@ platform :ios do
     sh "git checkout -b 'release/v#{branch_name}'"
     sh "git commit -a -m '#{message}'"
     sh 'git push origin HEAD'
-
+  end
+  
+  def tag
+    version_number = get_version_number target: 'odai'
     add_git_tag(tag: "v#{version_number}")
     sh 'git push --tags'
   end
