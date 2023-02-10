@@ -1,5 +1,6 @@
 # Global values
 ENV["FASTLANE_XCODEBUILD_SETTINGS_TIMEOUT"] = "120"
+MATCH_PASSWORD = ENV["KEYCHAIN_PASSWORD"]
 
 default_platform(:ios)
 
