@@ -17,13 +17,19 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-
+            
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.0
+          bundler-cache: true
 
       - name: Bundle install
         run: |
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
 
-      - name: Bump minor version then create a release branch and tag
+      - name: Bump minor version then create a release branch
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
