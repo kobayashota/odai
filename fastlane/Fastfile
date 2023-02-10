@@ -49,7 +49,9 @@ platform :ios do
       type: "appstore",
       readonly: true,
       git_basic_authorization: ENV['MATCH_GIT_BASIC_AUTHORIZATION'],
-      verbose: true
+      verbose: true,
+      keychain_name: "mykeychain",
+      keychain_password: ENV["KEYCHAIN_PASSWORD"]
     )
     
     update_code_signing_settings(
