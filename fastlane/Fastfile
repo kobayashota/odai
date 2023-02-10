@@ -16,7 +16,6 @@ platform :ios do
       clean: true,
       silent: true,
       cloned_source_packages_path: "SourcePackages",
-      #xcargs: "-allowProvisioningUpdates -authenticationKeyID #{ENV["ASC_KEY_ID"]} -authenticationKeyIssuerID #{ENV["ASC_ISSUER_ID"]}",
       export_method: "app-store"
     )
   end
