@@ -85,8 +85,8 @@ jobs:
       run: |
         xcodebuild \
           -exportArchive \
+          -archivePath "${{ github.workspace }}" \
           -authenticationKeyPath "${{ github.workspace }}/AuthKey_${{ secrets.ASC_KEY_ID }}.p8" \
           -authenticationKeyID "${{ secrets.ASC_KEY_ID }}" \
           -authenticationKeyIssuerID "${{ secrets.ASC_ISSUER_ID }}" \
           -allowProvisioningUpdates
-
