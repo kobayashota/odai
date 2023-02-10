@@ -6,16 +6,21 @@ default_platform(:ios)
 
 platform :ios do
   
-#   private_lane :prepare_app_store_connect_api_key do
-#   app_store_connect_api_key(
-#     key_id: ENV["ASC_KEY_ID"],
-#     issuer_id: ENV["ASC_ISSUER_ID"],
-#     key_content: ENV["ASC_KEY_CONTENT_BASE64"],
-#     is_key_content_base64: true,
-#     in_house: false
-#   )
-#   end
-
+  lane :build_ipa do
+  # add actions here: https://docs.fastlane.tools/actions
+    setup_ci(provider: "travis")
+    
+    import_certificate_and_provisioning_profile
+    
+    build_app(
+      clean: true,
+      silent: true,
+      cloned_source_packages_path: "SourcePackages",
+      #xcargs: "-allowProvisioningUpdates -authenticationKeyID #{ENV["ASC_KEY_ID"]} -authenticationKeyIssuerID #{ENV["ASC_ISSUER_ID"]}",
+      export_method: "app-store"
+    )
+  end
+  
   desc "import certificate and provisioning profile" 
   private_lane :import_certificate_and_provisioning_profile do
     
@@ -35,21 +40,6 @@ platform :ios do
       readonly: is_ci
     )
     
-  end
-  
-  lane :build_ipa do
-  # add actions here: https://docs.fastlane.tools/actions
-    setup_ci(provider: "travis")
-    
-    import_certificate_and_provisioning_profile
-    
-    build_app(
-      clean: true,
-      silent: true,
-      cloned_source_packages_path: "SourcePackages",
-      #xcargs: "-allowProvisioningUpdates -authenticationKeyID #{ENV["ASC_KEY_ID"]} -authenticationKeyIssuerID #{ENV["ASC_ISSUER_ID"]}",
-      export_method: "app-store"
-    )
   end
   
   desc "Description of what the lane does"
