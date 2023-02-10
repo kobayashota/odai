@@ -77,8 +77,9 @@ jobs:
           CODE_SIGNING_ALLOWED=NO \
           -project odai.xcodeproj \
           -scheme "odai" \
-          -configuration Release
-          -quiet
+          -configuration Release \
+          -quiet \
+          -clonedSourcePackagesDirPath SourcePackages
           
     - name: Export ipa
       run: |
