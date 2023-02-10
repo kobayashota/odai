@@ -78,6 +78,7 @@ jobs:
           -project odai.xcodeproj \
           -scheme "odai" \
           -configuration Release
+          -quiet
           
     - name: Export ipa
       run: |
