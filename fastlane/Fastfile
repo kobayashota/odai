@@ -59,12 +59,9 @@ platform :ios do
       project: "odai.xcodeproj",
       configuration: "Release",
       cloned_source_packages_path: "SourcePackages",
-      xcargs: "-allowProvisioningUpdates",
+      xcargs: "-allowProvisioningUpdates -authenticationKeyID #{ENV["ASC_KEY_ID"]} -authenticationKeyIssuerID #{ENV["ASC_ISSUER_ID"]}",
       export_method: "app-store",
-      export_team_id: ENV["TEAM_ID"],
-      export_options: {
-        "com.kobashou06.odai" => "odai_app_store.mobileprovision"
-      }
+      export_team_id: ENV["TEAM_ID"]
     )
   end
   
